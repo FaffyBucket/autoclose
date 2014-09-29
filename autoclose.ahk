@@ -1,4 +1,4 @@
-; Version:        6
+; Version:        7
 ; AutoHotkey Version: 1.1.08
 ; Language:       English
 ; Platform:       Windows 7 64-bit
@@ -74,6 +74,12 @@ IfWinActive,  - Nitro Reader 3
 IfWinActive, Open File - Security Warning
 	{
 	Send !r
+	}
+
+;Scan and fix
+IfWinActive, , Scan and fix (recommended)
+	{
+	Send {Escape}
 	}
 
 return
