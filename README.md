@@ -1,3 +1,0 @@
-autoclose
-=========
-Hello World!
