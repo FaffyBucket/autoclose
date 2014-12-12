@@ -1,7 +1,7 @@
 /*
 ************************************************************************************************
-* Version:        7.1                                                                          *
-* AutoHotkey Version: v1.1.13.00                                                               *
+* Version:        7.2                                                                          *
+* AutoHotkey Version: v1                                                                       *
 * Language:       English                                                                      *
 * Platform:       Windows 7, 8                                                                 *
 * Author:         www.twitter.com/matthiew                                                     *
