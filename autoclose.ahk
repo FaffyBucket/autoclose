@@ -2,7 +2,7 @@
 ************************************************************************************************
 * autoclose																					   *
 *                                                                                              *
-* Version:              7.4                                                                    *
+* Version:              7.5                                                                    *
 * AutoHotkey Version:   1.1                                                                    *
 * Language:       		English                                                                *
 * Platform:       		Windows 7, 8                                                           *
@@ -121,6 +121,16 @@ IfWinActive, Open File - Security Warning
 
 
 
+;Outlook.com
+IfWinActive, msn`, with Outlook.com`, Skype`, and news - Waterfox
+{
+	SendInput ^w
+	Run, https://outlook.com/
+}
+
+
+
+
 ;Program Compatibility Assistant
 IfWinActive, Program Compatibility Assistant
 {
@@ -152,6 +162,8 @@ autoclose Known Issues:
 
 
 autoclose Version History:
+7.5 - Added "Outlook.com" section.
+	- Updated documentation and README.md.
 7.4 - autoclose now runs as Administrator so that "Program Compatibility Assistant" section
 	  will work.
 	- Added "Call Of Duty games" section.
