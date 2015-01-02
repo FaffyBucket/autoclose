@@ -2,7 +2,7 @@
 ************************************************************************************************
 * autoclose																					   *
 *                                                                                              *
-* Version:              7.3                                                                    *
+* Version:              7.4                                                                    *
 * AutoHotkey Version:   1.1                                                                    *
 * Language:       		English                                                                *
 * Platform:       		Windows 7, 8                                                           *
@@ -53,6 +53,15 @@ IfWinActive, - Adobe Acrobat Pro ;ahk_exe acrobat.exe
 		last_active_id = %active_id%
 		}
 	}
+
+
+
+
+;Call Of Duty games
+IfWinActive, Set Optimal Settings?
+{
+	SendInput !n
+}
 
 
 
@@ -115,12 +124,6 @@ IfWinActive, Open File - Security Warning
 ;Program Compatibility Assistant
 IfWinActive, Program Compatibility Assistant
 {
-	;FAILED:Send {Escape}
-	;FAILED:Send {Esc}
-	;FAILED:Send {Tab} Send {Enter}
-	;SendInput {Tab}
-	;SendEvent {Tab}
-	;SendRaw `t
 	SendInput {Esc}
 }
 
@@ -149,7 +152,11 @@ autoclose Known Issues:
 
 
 autoclose Version History:
-7.4 - Added "Program Compatibility Assistant" section.
+7.4 - autoclose now runs as Administrator so that "Program Compatibility Assistant" section
+	  will work.
+	- Added "Call Of Duty games" section.
+	- Updated documentation and README.md.
+7.3 - Added "Program Compatibility Assistant" section.
 	- Added #SingleInstance.
     - Updated documentation and README.md.
 7.2 - Updated documentation and reorganised files.
