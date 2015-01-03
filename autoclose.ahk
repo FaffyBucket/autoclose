@@ -2,7 +2,7 @@
 ************************************************************************************************
 * autoclose																					   *
 *                                                                                              *
-* Version:              7.5                                                                    *
+* Version:              7.6                                                                    *
 * AutoHotkey Version:   1.1                                                                    *
 * Language:       		English                                                                *
 * Platform:       		Windows 7, 8                                                           *
@@ -14,7 +14,7 @@
 
 if not A_IsAdmin
 {
-	Run *RunAs "%A_ScriptFullPath%"
+	Run *RunAs "%A_AhkPath%" autoclose.ahk
 	ExitApp
 }
 
@@ -162,6 +162,7 @@ autoclose Known Issues:
 
 
 autoclose Version History:
+7.6 - Updated run as Administrator command.
 7.5 - Added "Outlook.com" section.
 	- Updated documentation and README.md.
 7.4 - autoclose now runs as Administrator so that "Program Compatibility Assistant" section
