@@ -2,7 +2,7 @@
 ************************************************************************************************
 * autoclose																					   *
 *                                                                                              *
-* Version:              7.6                                                                    *
+* Version:              10.0                                                                   *
 * AutoHotkey Version:   1.1                                                                    *
 * Language:       		English                                                                *
 * Platform:       		Windows 7, 8                                                           *
@@ -23,6 +23,8 @@ autoclose Known Issues:
 
 
 autoclose Version History:
+10.0 - Corrected version number.
+	 - Updated "Open File - Security Warning" section.
 7.6 - Updated run as Administrator command.
 7.5 - Added "Outlook.com" section.
 	- Updated documentation and README.md.
