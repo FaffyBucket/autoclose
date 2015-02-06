@@ -2,7 +2,7 @@
 ************************************************************************************************
 * autoclose																					   *
 *                                                                                              *
-* Version:              10.0                                                                   *
+* Version:              12.0                                                                   *
 * AutoHotkey Version:   1.1                                                                    *
 * Language:       		English                                                                *
 * Platform:       		Windows 7, 8                                                           *
@@ -23,6 +23,9 @@ autoclose Known Issues:
 
 
 autoclose Version History:
+12.0 - Added AutoHotkey section.
+	 - Added Titanfall section.
+	 - Updated documentation.
 10.0 - Corrected version number.
 	 - Updated "Open File - Security Warning" section.
 7.6 - Updated run as Administrator command.

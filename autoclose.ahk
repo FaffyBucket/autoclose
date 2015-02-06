@@ -2,7 +2,7 @@
 ************************************************************************************************
 * autoclose																					   *
 *                                                                                              *
-* Version:              10.0                                                                   *
+* Version:              12.0                                                                   *
 * AutoHotkey Version:   1.1                                                                    *
 * Language:       		English                                                                *
 * Platform:       		Windows 7, 8                                                           *
@@ -57,7 +57,16 @@ IfWinActive, - Adobe Acrobat Pro ;ahk_exe acrobat.exe
 
 
 
-;Call Of Duty games
+; AutoHotkey (#SingleInstance)
+IfWinActive, , An older instance of this script is already running.
+{
+	SendInput !Y
+}
+
+
+
+
+;Call Of Duty games (Optimal Settings prompt)
 IfWinActive, Set Optimal Settings?
 {
 	SendInput !n
@@ -66,7 +75,7 @@ IfWinActive, Set Optimal Settings?
 
 
 
-;Internet Explorer
+;Internet Explorer (default browser prompt)
 IfWinActive, Internet Explorer is not your default browser
 	{
 	Send ^w
@@ -75,7 +84,7 @@ IfWinActive, Internet Explorer is not your default browser
 	
 	
 	
-;Logitech Gaming Software
+;Logitech Gaming Software (LGS launches when device disconnected)
 IfWinActive, Logitech Gaming Software	;, , , qt_scrollarea_viewport
 	{
 	if already_run_lgs != 1
@@ -88,7 +97,7 @@ IfWinActive, Logitech Gaming Software	;, , , qt_scrollarea_viewport
 
 
 
-;Maze
+;Maze (Exit confirmation)
 IfWinActive, Exit, Are you sure you want to exit?
 	{
 	Send !Y
@@ -97,7 +106,7 @@ IfWinActive, Exit, Are you sure you want to exit?
 
 
 
-;Nitro Reader
+;Nitro Reader (set Actual Size, Continuous)
 IfWinActive,  - Nitro Reader 3
 	{
 	WinGet, active_id, ID, A
@@ -121,7 +130,7 @@ IfWinActive, Open File - Security Warning
 
 
 
-;Outlook.com
+;Outlook.com (return to login screen on logout)
 IfWinActive, msn`, with Outlook.com`, Skype`, and news - Waterfox
 {
 	SendInput ^w
@@ -149,6 +158,15 @@ IfWinActive, , Scan and fix (recommended)
 
 
 
+; Titanfall (crash on close)
+IfWinActive, TitanFall.exe, Check online for a solution and close the program
+{
+	SendInput {Esc}
+}
+
+
+
+
 return
 
 
@@ -162,6 +180,9 @@ autoclose Known Issues:
 
 
 autoclose Version History:
+12.0 - Added AutoHotkey section.
+	 - Added Titanfall section.
+	 - Updated documentation.
 10.0 - Corrected version number.
 	 - Updated "Open File - Security Warning" section.
 7.6 - Updated run as Administrator command.
