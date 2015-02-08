@@ -1,15 +1,16 @@
 /*
-************************************************************************************************
-* autoclose																					   *
-*                                                                                              *
-* Version:              12.0                                                                   *
-* AutoHotkey Version:   1.1                                                                    *
-* Language:       		English                                                                *
-* Platform:       		Windows 7, 8                                                           *
-* Author:         		www.twitter.com/matthiew                                               *
-*                                                                                              *
-* Script Function: Searches for a specific window and does something when it finds it.         *
-************************************************************************************************
+********************************************************************************
+* autoclose																		*
+*                                                                               *
+* Version:              13.0                                                    *
+* AutoHotkey Version:   1.1                                                     *
+* Language:       		English                                                 *
+* Platform:       		Windows 7, 8                                            *
+* Author:         		www.twitter.com/matthiew                                *
+*                                                                               *
+* Script Function: Searches for a specific window and does something when it    *
+* finds it.         															*
+*********************************************************************************
 */
 
 if not A_IsAdmin
@@ -18,9 +19,9 @@ if not A_IsAdmin
 	ExitApp
 }
 
-#NoEnv  ; Recommended for performance and compatibility with future AutoHotkey releases.
+#NoEnv  ; Recommended for performance and compatibility with future AHK releases.
 #Warn  ; Recommended for catching common errors.
-SendMode Input  ; Recommended for new scripts due to its superior speed and reliability.
+SendMode Input  ; Recommended due to its superior speed and reliability.
 SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 
 Menu, Tray, Icon, A.ico
@@ -70,6 +71,15 @@ IfWinActive, , An older instance of this script is already running.
 IfWinActive, Set Optimal Settings?
 {
 	SendInput !n
+}
+
+
+
+
+; CrashPlan (sleep)
+IfWinActive, How long would you like to sleep?
+{
+	SendInput {Enter}
 }
 
 
@@ -173,13 +183,15 @@ return
 
 
 /*
-************************************************************************************************
+*********************************************************************************
 autoclose Known Issues:
+ - none
 
 
 
 
 autoclose Version History:
+13.0 - Added CrashPlan section.
 12.0 - Added AutoHotkey section.
 	 - Added Titanfall section.
 	 - Updated documentation.
@@ -188,8 +200,8 @@ autoclose Version History:
 7.6 - Updated run as Administrator command.
 7.5 - Added "Outlook.com" section.
 	- Updated documentation and README.md.
-7.4 - autoclose now runs as Administrator so that "Program Compatibility Assistant" section
-	  will work.
+7.4 - autoclose now runs as Administrator so that "Program Compatibility
+	  Assistant" section will work.
 	- Added "Call Of Duty games" section.
 	- Updated documentation and README.md.
 7.3 - Added "Program Compatibility Assistant" section.

@@ -1,28 +1,31 @@
 /*
-************************************************************************************************
-* autoclose																					   *
-*                                                                                              *
-* Version:              12.0                                                                   *
-* AutoHotkey Version:   1.1                                                                    *
-* Language:       		English                                                                *
-* Platform:       		Windows 7, 8                                                           *
-* Author:         		www.twitter.com/matthiew                                               *
-*                                                                                              *
-* Script Function: Searches for a specific window and does something when it finds it.         *
-************************************************************************************************
+********************************************************************************
+* autoclose																		*
+*                                                                               *
+* Version:              13.0                                                    *
+* AutoHotkey Version:   1.1                                                     *
+* Language:       		English                                                 *
+* Platform:       		Windows 7, 8                                            *
+* Author:         		www.twitter.com/matthiew                                *
+*                                                                               *
+* Script Function: Searches for a specific window and does something when it    *
+* finds it.         															*
+*********************************************************************************
 */
 
 
 
 
 /*
-************************************************************************************************
+*********************************************************************************
 autoclose Known Issues:
+ - none
 
 
 
 
 autoclose Version History:
+13.0 - Added CrashPlan section.
 12.0 - Added AutoHotkey section.
 	 - Added Titanfall section.
 	 - Updated documentation.
@@ -31,8 +34,8 @@ autoclose Version History:
 7.6 - Updated run as Administrator command.
 7.5 - Added "Outlook.com" section.
 	- Updated documentation and README.md.
-7.4 - autoclose now runs as Administrator so that "Program Compatibility Assistant" section
-	  will work.
+7.4 - autoclose now runs as Administrator so that "Program Compatibility
+	  Assistant" section will work.
 	- Added "Call Of Duty games" section.
 	- Updated documentation and README.md.
 7.3 - Added "Program Compatibility Assistant" section.
