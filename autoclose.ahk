@@ -1,8 +1,8 @@
 /*
-********************************************************************************
+*********************************************************************************
 * autoclose																		*
 *                                                                               *
-* Version:              13.0                                                    *
+* Version:              13.1                                                    *
 * AutoHotkey Version:   1.1                                                     *
 * Language:       		English                                                 *
 * Platform:       		Windows 7, 8                                            *
@@ -140,8 +140,9 @@ IfWinActive, Open File - Security Warning
 
 
 
-;Outlook.com (return to login screen on logout)
-IfWinActive, msn`, with Outlook.com`, Skype`, and news - Waterfox
+; Outlook.com (return to login screen on logout)
+IfWinActive, msn`, with Outlook.com`, Skype`, news and Hotmail - Waterfox
+; IfWinActive, msn`, with Outlook.com`, Skype`, and news - Waterfox
 {
 	SendInput ^w
 	Run, https://outlook.com/
@@ -191,6 +192,7 @@ autoclose Known Issues:
 
 
 autoclose Version History:
+13.1 - Updated Outlook.com section.
 13.0 - Added CrashPlan section.
 12.0 - Added AutoHotkey section.
 	 - Added Titanfall section.
@@ -210,5 +212,5 @@ autoclose Version History:
 7.2 - Updated documentation and reorganised files.
 7.1 - Updated documentation.
 7.0 - Imported to GitHub.
-************************************************************************************************
+*********************************************************************************
 */
