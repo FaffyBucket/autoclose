@@ -2,7 +2,7 @@
 *********************************************************************************
 * autoclose																		*
 *                                                                               *
-* Version:              13.1                                                    *
+* Version:              14.0                                                    *
 * AutoHotkey Version:   1.1                                                     *
 * Language:       		English                                                 *
 * Platform:       		Windows 7, 8                                            *
@@ -116,6 +116,15 @@ IfWinActive, Exit, Are you sure you want to exit?
 
 
 
+; Mouse and Keyboard Center
+IfWinActive, Please wait while the application opens: MouseKeyboardCenter.exe
+{
+	SendInput !C
+}
+
+
+
+
 ;Nitro Reader (set Actual Size, Continuous)
 IfWinActive,  - Nitro Reader 3
 	{
@@ -192,6 +201,7 @@ autoclose Known Issues:
 
 
 autoclose Version History:
+14.0 - Added Mouse and Keyboard Center section.
 13.1 - Updated Outlook.com section.
 13.0 - Added CrashPlan section.
 12.0 - Added AutoHotkey section.
