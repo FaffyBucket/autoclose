@@ -2,7 +2,7 @@
 *********************************************************************************
 * autoclose																		*
 *                                                                               *
-* Version:              14.0                                                    *
+* Version:              14.1                                                    *
 * AutoHotkey Version:   1.1                                                     *
 * Language:       		English                                                 *
 * Platform:       		Windows 7, 8                                            *
@@ -179,8 +179,9 @@ IfWinActive, , Scan and fix (recommended)
 
 
 ; Titanfall (crash on close)
-IfWinActive, TitanFall.exe, Check online for a solution and close the program
+IfWinExist, TitanFall.exe, Check online for a solution and close the program
 {
+	WinActivate, TitanFall.exe, Check online for a solution and close the program
 	SendInput {Esc}
 }
 
@@ -201,6 +202,7 @@ autoclose Known Issues:
 
 
 autoclose Version History:
+14.1 - Updated Titanfall section.
 14.0 - Added Mouse and Keyboard Center section.
 13.1 - Updated Outlook.com section.
 13.0 - Added CrashPlan section.
