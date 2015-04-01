@@ -2,7 +2,7 @@
 *********************************************************************************
 * autoclose																		*
 *                                                                               *
-* Version:              14.1                                                    *
+* Version:              15.0                                                    *
 * AutoHotkey Version:   1.1                                                     *
 * Language:       		English                                                 *
 * Platform:       		Windows 7, 8                                            *
@@ -107,6 +107,15 @@ IfWinActive, Logitech Gaming Software	;, , , qt_scrollarea_viewport
 
 
 
+; MakeMKV (Create folder confirmation)
+IfWinActive, MakeMKV BETA popup
+{
+	SendInput !y
+}
+
+
+
+
 ;Maze (Exit confirmation)
 IfWinActive, Exit, Are you sure you want to exit?
 	{
@@ -202,6 +211,7 @@ autoclose Known Issues:
 
 
 autoclose Version History:
+15.0 - Added MakeMKV section.
 14.1 - Updated Titanfall section.
 14.0 - Added Mouse and Keyboard Center section.
 13.1 - Updated Outlook.com section.
