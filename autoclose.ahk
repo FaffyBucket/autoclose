@@ -2,7 +2,7 @@
 *********************************************************************************
 * autoclose																		*
 *                                                                               *
-* Version:              15.0                                                    *
+* Version:              15.1                                                    *
 * AutoHotkey Version:   1.1                                                     *
 * Language:       		English                                                 *
 * Platform:       		Windows 7, 8                                            *
@@ -26,7 +26,7 @@ SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 
 Menu, Tray, Icon, A.ico
 #Persistent
-#SingleInstance
+#SingleInstance Force
 SetTitleMatchMode 2
 
 
@@ -59,10 +59,10 @@ IfWinActive, - Adobe Acrobat Pro ;ahk_exe acrobat.exe
 
 
 ; AutoHotkey (#SingleInstance)
-IfWinActive, , An older instance of this script is already running.
-{
-	SendInput !Y
-}
+;IfWinActive, , An older instance of this script is already running.
+;{
+;	SendInput !Y
+;}
 
 
 
@@ -211,7 +211,10 @@ autoclose Known Issues:
 
 
 autoclose Version History:
+15.1 - Updated #SingleInstance.
+	 - Removed AutoHotkey section.
 15.0 - Added MakeMKV section.
+	 - Retired README.md.
 14.1 - Updated Titanfall section.
 14.0 - Added Mouse and Keyboard Center section.
 13.1 - Updated Outlook.com section.
