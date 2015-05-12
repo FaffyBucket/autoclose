@@ -2,7 +2,7 @@
 *********************************************************************************
 * autoclose																		*
 *                                                                               *
-* Version:              15.1                                                    *
+* Version:              15.2                                                    *
 * AutoHotkey Version:   1.1                                                     *
 * Language:       		English                                                 *
 * Platform:       		Windows 7, 8                                            *
@@ -159,7 +159,8 @@ IfWinActive, Open File - Security Warning
 
 
 ; Outlook.com (return to login screen on logout)
-IfWinActive, msn`, with Outlook.com`, Skype`, news and Hotmail - Waterfox
+IfWinActive, MSN Australia | Hotmail`, Outlook`, Skype`, News and Video - Waterfox
+; IfWinActive, msn`, with Outlook.com`, Skype`, news and Hotmail - Waterfox
 ; IfWinActive, msn`, with Outlook.com`, Skype`, and news - Waterfox
 {
 	SendInput ^w
@@ -211,6 +212,7 @@ autoclose Known Issues:
 
 
 autoclose Version History:
+15.2 - Updated Outlook.com section.
 15.1 - Updated #SingleInstance.
 	 - Removed AutoHotkey section.
 15.0 - Added MakeMKV section.
