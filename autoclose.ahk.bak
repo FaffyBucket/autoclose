@@ -2,7 +2,7 @@
 *********************************************************************************
 * autoclose																		*
 *                                                                               *
-* Version:              15.2                                                    *
+* Version:              15.3                                                    *
 * AutoHotkey Version:   1.1                                                     *
 * Language:       		English                                                 *
 * Platform:       		Windows 7, 8                                            *
@@ -13,11 +13,12 @@
 *********************************************************************************
 */
 
-if not A_IsAdmin
-{
-	Run *RunAs "%A_AhkPath%" autoclose.ahk
-	ExitApp
-}
+; This will trigger a UAC prompt. Run as Administrator from the shortcut instead.
+;~ if not A_IsAdmin
+;~ {
+	;~ Run *RunAs "%A_AhkPath%" autoclose.ahk
+	;~ ExitApp
+;~ }
 
 #NoEnv  ; Recommended for performance and compatibility with future AHK releases.
 #Warn  ; Recommended for catching common errors.
@@ -170,7 +171,7 @@ IfWinActive, MSN Australia | Hotmail`, Outlook`, Skype`, News and Video - Waterf
 
 
 
-;Program Compatibility Assistant
+;Program Compatibility Assistant. This requires Administrator access.
 IfWinActive, Program Compatibility Assistant
 {
 	SendInput {Esc}
@@ -212,6 +213,8 @@ autoclose Known Issues:
 
 
 autoclose Version History:
+15.3 - Removed run as Administrator. It should be set in the shortcut instead
+	   to avoid a UAC prompt.
 15.2 - Updated Outlook.com section.
 15.1 - Updated #SingleInstance.
 	 - Removed AutoHotkey section.
