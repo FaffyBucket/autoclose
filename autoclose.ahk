@@ -2,7 +2,7 @@
 *********************************************************************************
 * autoclose																		*
 *                                                                               *
-* Version:              15.4                                                    *
+* Version:              15.5                                                    *
 * AutoHotkey Version:   1.1                                                     *
 * Language:       		English                                                 *
 * Platform:       		Windows 7, 8                                            *
@@ -107,11 +107,11 @@ IfWinActive, Logitech Gaming Software	;, , , qt_scrollarea_viewport
 
 
 
-; MakeMKV (Create folder confirmation)
-IfWinActive, MakeMKV BETA popup
-{
-	SendInput !y
-}
+;~ ; MakeMKV (Create folder confirmation)
+;~ IfWinActive, MakeMKV BETA popup
+;~ {
+	;~ SendInput !y
+;~ }
 
 
 
@@ -212,6 +212,7 @@ autoclose Known Issues:
 
 
 autoclose Version History:
+15.5 - Removed MakeMKV section. MakeMKV has multiple popups with the same title.
 15.4 - Returned run as Administrator.
 15.3 - Removed run as Administrator. It should be set in the shortcut instead
 	   to avoid a UAC prompt.

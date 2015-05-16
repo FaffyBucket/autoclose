@@ -2,7 +2,7 @@
 *********************************************************************************
 * autoclose																		*
 *                                                                               *
-* Version:              15.3                                                    *
+* Version:              15.4                                                    *
 * AutoHotkey Version:   1.1                                                     *
 * Language:       		English                                                 *
 * Platform:       		Windows 7, 8                                            *
@@ -13,12 +13,11 @@
 *********************************************************************************
 */
 
-; This will trigger a UAC prompt. Run as Administrator from the shortcut instead.
-;~ if not A_IsAdmin
-;~ {
-	;~ Run *RunAs "%A_AhkPath%" autoclose.ahk
-	;~ ExitApp
-;~ }
+if not A_IsAdmin
+{
+	Run *RunAs "%A_AhkPath%" autoclose.ahk
+	ExitApp
+}
 
 #NoEnv  ; Recommended for performance and compatibility with future AHK releases.
 #Warn  ; Recommended for catching common errors.
@@ -213,6 +212,7 @@ autoclose Known Issues:
 
 
 autoclose Version History:
+15.4 - Returned run as Administrator.
 15.3 - Removed run as Administrator. It should be set in the shortcut instead
 	   to avoid a UAC prompt.
 15.2 - Updated Outlook.com section.
