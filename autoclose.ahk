@@ -2,7 +2,7 @@
 *********************************************************************************
 * autoclose																		*
 *                                                                               *
-* Version:              15.5                                                    *
+* Version:              16.0                                                    *
 * AutoHotkey Version:   1.1                                                     *
 * Language:       		English                                                 *
 * Platform:       		Windows 7, 8                                            *
@@ -94,6 +94,15 @@ IfWinActive, Internet Explorer is not your default browser
 	
 	
 	
+; LastPass CC fill
+IfWinActive, LastPass FF Toolbar,
+{
+	SendInput {Enter}
+}
+
+
+
+
 ;Logitech Gaming Software (LGS launches when device disconnected)
 IfWinActive, Logitech Gaming Software	;, , , qt_scrollarea_viewport
 	{
@@ -212,6 +221,7 @@ autoclose Known Issues:
 
 
 autoclose Version History:
+16.0 - Added LastPass section.
 15.5 - Removed MakeMKV section. MakeMKV has multiple popups with the same title.
 15.4 - Returned run as Administrator.
 15.3 - Removed run as Administrator. It should be set in the shortcut instead
