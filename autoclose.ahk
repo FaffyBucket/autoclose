@@ -2,7 +2,7 @@
 *********************************************************************************
 * autoclose																		*
 *                                                                               *
-* Version:              16.0                                                    *
+* Version:              16.1                                                    *
 * AutoHotkey Version:   1.1                                                     *
 * Language:       		English                                                 *
 * Platform:       		Windows 7, 8                                            *
@@ -94,11 +94,11 @@ IfWinActive, Internet Explorer is not your default browser
 	
 	
 	
-; LastPass CC fill
-IfWinActive, LastPass FF Toolbar,
-{
-	SendInput {Enter}
-}
+;~ LastPass CC fill
+;~ IfWinActive, LastPass FF Toolbar,
+;~ {
+	;~ SendInput {Enter}
+;~ }
 
 
 
@@ -221,6 +221,8 @@ autoclose Known Issues:
 
 
 autoclose Version History:
+16.1 - Disabled LastPass section. It was triggering when deleting passwords from
+	   LastPass. Need to find a way to exclude "LastPass FF Toolbar".
 16.0 - Added LastPass section.
 15.5 - Removed MakeMKV section. MakeMKV has multiple popups with the same title.
 15.4 - Returned run as Administrator.
