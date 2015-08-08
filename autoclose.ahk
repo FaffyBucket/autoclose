@@ -2,7 +2,7 @@
 *********************************************************************************
 * autoclose																		*
 *                                                                               *
-* Version:              16.1                                                    *
+* Version:              16.2                                                    *
 * AutoHotkey Version:   1.1                                                     *
 * Language:       		English                                                 *
 * Platform:       		Windows 7, 8                                            *
@@ -67,10 +67,16 @@ IfWinActive, - Adobe Acrobat Pro ;ahk_exe acrobat.exe
 
 
 
-;Call Of Duty games (Optimal Settings prompt)
+;~ Call Of Duty games
+;~ (Optimal settings)
 IfWinActive, Set Optimal Settings?
 {
 	SendInput !n
+}
+;~ (Safe mode)
+IfWinActive, Run In Safe Mode?
+{
+		SendInput !n
 }
 
 
@@ -221,6 +227,7 @@ autoclose Known Issues:
 
 
 autoclose Version History:
+16.2 - Updated Call Of Duty section.
 16.1 - Disabled LastPass section. It was triggering when deleting passwords from
 	   LastPass. Need to find a way to exclude "LastPass FF Toolbar".
 16.0 - Added LastPass section.
