@@ -2,7 +2,7 @@
 *********************************************************************************
 * autoclose																		*
 *                                                                               *
-* Version:              16.1                                                    *
+* Version:              16.2                                                    *
 * AutoHotkey Version:   1.1                                                     *
 * Language:       		English                                                 *
 * Platform:       		Windows 7, 8                                            *
@@ -58,11 +58,14 @@ IfWinActive, - Adobe Acrobat Pro ;ahk_exe acrobat.exe
 
 
 
-; AutoHotkey (#SingleInstance)
-;IfWinActive, , An older instance of this script is already running.
-;{
-;	SendInput !Y
-;}
+/* 
+ * AutoHotkey (#SingleInstance)
+ * IfWinActive, , An older instance of this script is already running.
+ * {
+ * 	SendInput !Y
+ * }
+ */
+
 
 
 
@@ -100,11 +103,14 @@ IfWinActive, Internet Explorer is not your default browser
 	
 	
 	
-;~ LastPass CC fill
-;~ IfWinActive, LastPass FF Toolbar,
-;~ {
-	;~ SendInput {Enter}
-;~ }
+/* 
+ * LastPass CC fill
+ * IfWinActive, LastPass FF Toolbar,
+ * 	{
+ * 	SendInput {Enter}
+ * 	}
+ */
+
 
 
 
@@ -122,11 +128,12 @@ IfWinActive, Logitech Gaming Software	;, , , qt_scrollarea_viewport
 
 
 
-;~ ; MakeMKV (Create folder confirmation)
-;~ IfWinActive, MakeMKV BETA popup
-;~ {
-	;~ SendInput !y
-;~ }
+/* ; MakeMKV (Create folder confirmation)
+ * IfWinActive, MakeMKV BETA popup
+ * {
+ * 	SendInput !y
+ * }
+ */
 
 
 
@@ -199,16 +206,26 @@ IfWinActive, , Scan and fix (recommended)
 	{
 	Send {Escape}
 	}
-
-
-
-
-; Titanfall (crash on close)
-IfWinExist, TitanFall.exe, Check online for a solution and close the program
+	
+	
+	
+	
+;Spotify
+IfWinActive, Spotify
 {
-	WinActivate, TitanFall.exe, Check online for a solution and close the program
-	SendInput {Esc}
+	RegDelete, HKEY_CURRENT_USER, Software\Microsoft\Windows\CurrentVersion\Run, Spotify
 }
+
+
+
+
+/* ; Titanfall (crash on close)
+ * IfWinExist, TitanFall.exe, Check online for a solution and close the program
+ * {
+ * 	WinActivate, TitanFall.exe, Check online for a solution and close the program
+ * 	SendInput {Esc}
+ * }
+ */
 
 
 
@@ -227,6 +244,10 @@ autoclose Known Issues:
 
 
 autoclose Version History:
+17.0 - Added Spotify section.
+	 - Removed Titanfall section.
+	 - Cleaned up comments.
+16.2 - Updated Call Of Duty section.
 16.1 - Disabled LastPass section. It was triggering when deleting passwords from
 	   LastPass. Need to find a way to exclude "LastPass FF Toolbar".
 16.0 - Added LastPass section.
