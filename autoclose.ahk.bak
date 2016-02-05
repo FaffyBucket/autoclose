@@ -2,7 +2,7 @@
 *********************************************************************************
 * autoclose																		*
 *                                                                               *
-* Version:              16.2                                                    *
+* Version:              16.3                                                    *
 * AutoHotkey Version:   1.1                                                     *
 * Language:       		English                                                 *
 * Platform:       		Windows 7, 8                                            *
@@ -138,11 +138,19 @@ IfWinActive, Logitech Gaming Software	;, , , qt_scrollarea_viewport
 
 
 
-;Maze (Exit confirmation)
+;Maze
+; Exit confirmation
 IfWinActive, Exit, Are you sure you want to exit?
-	{
+{
 	Send !Y
-	}
+}
+; Login with Windows Authentication
+IfWinActive, Login, This is my preferred database
+{
+	SendInput {Tab}
+	SendInput {Space}
+	SendInput !o
+}
 
 
 
@@ -210,7 +218,7 @@ IfWinActive, , Scan and fix (recommended)
 	
 	
 	
-;Spotify
+;Spotify (stops Spotify from running at login)
 IfWinActive, Spotify
 {
 	RegDelete, HKEY_CURRENT_USER, Software\Microsoft\Windows\CurrentVersion\Run, Spotify

@@ -2,7 +2,7 @@
 *********************************************************************************
 * autoclose																		*
 *                                                                               *
-* Version:              16.2                                                    *
+* Version:              17.1                                                    *
 * AutoHotkey Version:   1.1                                                     *
 * Language:       		English                                                 *
 * Platform:       		Windows 7, 8                                            *
@@ -138,11 +138,19 @@ IfWinActive, Logitech Gaming Software	;, , , qt_scrollarea_viewport
 
 
 
-;Maze (Exit confirmation)
+;Maze
+; Exit confirmation
 IfWinActive, Exit, Are you sure you want to exit?
-	{
+{
 	Send !Y
-	}
+}
+; Login with Windows Authentication
+IfWinActive, Login, This is my preferred database
+{
+	SendInput {Tab}
+	SendInput {Space}
+	SendInput !o
+}
 
 
 
@@ -244,6 +252,7 @@ autoclose Known Issues:
 
 
 autoclose Version History:
+17.1 - Added login subsection to Maze section.
 17.0 - Added Spotify section.
 	 - Removed Titanfall section.
 	 - Cleaned up comments.
