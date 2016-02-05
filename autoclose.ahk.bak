@@ -2,7 +2,7 @@
 *********************************************************************************
 * autoclose																		*
 *                                                                               *
-* Version:              16.3                                                    *
+* Version:              18.0                                                    *
 * AutoHotkey Version:   1.1                                                     *
 * Language:       		English                                                 *
 * Platform:       		Windows 7, 8                                            *
@@ -200,6 +200,24 @@ IfWinActive, MSN Australia | Hotmail`, Outlook`, Skype`, News and Video - Waterf
 
 
 
+; ManageEngine ServiceDesk Plus (reminder)
+IfWinActive, Servicedesk - Reminder - Mozilla Firefox
+{
+	WinGet, active_id, ID, A
+	if last_active_id != %active_id%
+		{
+		SendInput #{Up}
+		SendInput {Tab 4}
+		SendInput 1
+		SendInput +{Tab 3}
+		last_active_id = %active_id%
+		}
+		
+}
+
+
+
+
 ;Program Compatibility Assistant. This requires Administrator access.
 IfWinActive, Program Compatibility Assistant
 {
@@ -252,6 +270,7 @@ autoclose Known Issues:
 
 
 autoclose Version History:
+17.1 - Added login subsection to Maze section.
 17.0 - Added Spotify section.
 	 - Removed Titanfall section.
 	 - Cleaned up comments.
