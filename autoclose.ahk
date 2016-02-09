@@ -2,7 +2,7 @@
 *********************************************************************************
 * autoclose																		*
 *                                                                               *
-* Version:              18.0                                                    *
+* Version:              18.1                                                    *
 * AutoHotkey Version:   1.1                                                     *
 * Language:       		English                                                 *
 * Platform:       		Windows 7, 8                                            *
@@ -138,6 +138,37 @@ IfWinActive, Logitech Gaming Software	;, , , qt_scrollarea_viewport
 
 
 
+; ManageEngine ServiceDesk Plus
+; [Reminder]
+IfWinActive, Servicedesk - Reminder
+{
+	WinGet, active_id, ID, A
+	if last_active_id != %active_id%
+	{
+		SendInput #{Up}
+		SendInput {Tab 4}
+		SendInput 1
+		SendInput +{Tab 3}
+		last_active_id = %active_id%
+	}
+}
+; [Send Notification]
+IfWinActive, ManageEngine ServiceDesk Plus - Send Notification
+{
+	WinGet, active_id, ID, A
+	if last_active_id != %active_id%
+	{
+		SendInput #{Up}
+		Sleep, 2000
+		SendInput CHECK THE CCs
+		SendInput {Enter 2}
+		last_active_id = %active_id%
+	}
+}
+
+
+
+
 ;Maze
 ; Exit confirmation
 IfWinActive, Exit, Are you sure you want to exit?
@@ -200,24 +231,6 @@ IfWinActive, MSN Australia | Hotmail`, Outlook`, Skype`, News and Video - Waterf
 
 
 
-; ManageEngine ServiceDesk Plus (reminder)
-IfWinActive, Servicedesk - Reminder - Mozilla Firefox
-{
-	WinGet, active_id, ID, A
-	if last_active_id != %active_id%
-		{
-		SendInput #{Up}
-		SendInput {Tab 4}
-		SendInput 1
-		SendInput +{Tab 3}
-		last_active_id = %active_id%
-		}
-		
-}
-
-
-
-
 ;Program Compatibility Assistant. This requires Administrator access.
 IfWinActive, Program Compatibility Assistant
 {
@@ -270,6 +283,7 @@ autoclose Known Issues:
 
 
 autoclose Version History:
+18.1 - Added to ManageEngine ServiceDesk Plus section.
 18.0 - Added ManageEngine ServiceDesk Plus section.
 17.1 - Added login subsection to Maze section.
 17.0 - Added Spotify section.
