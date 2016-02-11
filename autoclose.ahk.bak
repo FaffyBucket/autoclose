@@ -160,7 +160,7 @@ IfWinActive, ManageEngine ServiceDesk Plus - Send Notification
 	{
 		SendInput #{Up}
 		Sleep, 2000
-		SendInput CHECK THE CCs!
+		SendInput CHECK THE CCs
 		SendInput {Enter 2}
 		last_active_id = %active_id%
 	}
@@ -283,6 +283,7 @@ autoclose Known Issues:
 
 
 autoclose Version History:
+18.1 - Added to ManageEngine ServiceDesk Plus section.
 18.0 - Added ManageEngine ServiceDesk Plus section.
 17.1 - Added login subsection to Maze section.
 17.0 - Added Spotify section.
