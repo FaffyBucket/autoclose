@@ -2,7 +2,7 @@
 *********************************************************************************
 * autoclose																		*
 *                                                                               *
-* Version:              18.1                                                    *
+* Version:              18.2                                                    *
 * AutoHotkey Version:   1.1                                                     *
 * Language:       		English                                                 *
 * Platform:       		Windows 7, 8                                            *
@@ -32,7 +32,7 @@ SetTitleMatchMode 2
 
 
 
-already_run_lgs = 0
+;already_run_lgs = 0
 last_active_id = 0
 SetTimer, ifwinactive, 400
 return
@@ -116,14 +116,14 @@ IfWinActive, Internet Explorer is not your default browser
 
 
 ;Logitech Gaming Software (LGS launches when device disconnected)
-IfWinActive, Logitech Gaming Software	;, , , qt_scrollarea_viewport
-	{
-	if already_run_lgs != 1
-		{
-		WinClose
-		already_run_lgs = 1
-		}
-	}
+;~ IfWinActive, Logitech Gaming Software	;, , , qt_scrollarea_viewport
+	;~ {
+	;~ if already_run_lgs != 1
+		;~ {
+		;~ WinClose
+		;~ already_run_lgs = 1
+		;~ }
+	;~ }
 
 
 
@@ -283,6 +283,7 @@ autoclose Known Issues:
 
 
 autoclose Version History:
+18.2 - Disabled Logitech Gaming Software section.
 18.1 - Added to ManageEngine ServiceDesk Plus section.
 18.0 - Added ManageEngine ServiceDesk Plus section.
 17.1 - Added login subsection to Maze section.
