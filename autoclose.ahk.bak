@@ -2,7 +2,7 @@
 *********************************************************************************
 * autoclose																		*
 *                                                                               *
-* Version:              18.2                                                    *
+* Version:              19.0                                                    *
 * AutoHotkey Version:   1.1                                                     *
 * Language:       		English                                                 *
 * Platform:       		Windows 7, 8                                            *
@@ -169,19 +169,19 @@ IfWinActive, ManageEngine ServiceDesk Plus - Send Notification
 
 
 
-;Maze
-; Exit confirmation
-IfWinActive, Exit, Are you sure you want to exit?
-{
-	Send !Y
-}
-; Login with Windows Authentication
-IfWinActive, Login, This is my preferred database
-{
-	SendInput {Tab}
-	SendInput {Space}
-	SendInput !o
-}
+;~ ;Maze
+;~ ; Exit confirmation
+;~ IfWinActive, Exit, Are you sure you want to exit?
+;~ {
+	;~ Send !Y
+;~ }
+;~ ; Login with Windows Authentication
+;~ IfWinActive, Login, This is my preferred database
+;~ {
+	;~ SendInput {Tab}
+	;~ SendInput {Space}
+	;~ SendInput !o
+;~ }
 
 
 
@@ -283,6 +283,7 @@ autoclose Known Issues:
 
 
 autoclose Version History:
+19.0 - Disabled Maze section.
 18.2 - Disabled Logitech Gaming Software section.
 18.1 - Added to ManageEngine ServiceDesk Plus section.
 18.0 - Added ManageEngine ServiceDesk Plus section.
