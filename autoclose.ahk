@@ -2,7 +2,7 @@
 *********************************************************************************
 * autoclose																		*
 *                                                                               *
-* Version:              19.1                                                    *
+* Version:              19.2                                                    *
 * AutoHotkey Version:   1.1                                                     *
 * Language:       		English                                                 *
 * Platform:       		Windows 7, 8                                            *
@@ -220,7 +220,7 @@ IfWinActive, Open File - Security Warning
 
 
 ; Outlook.com (return to login screen on logout)
-IfWinActive, MSN Australia | Breaking news`, Hotmail`, Outlook`, Skype and Video - Waterfox
+IfWinActive, MSN Australia | Hotmail login`, Breaking news`, Outlook`, Skype and Video - Waterfox
 ; IfWinActive, MSN Australia | Hotmail`, Outlook`, Skype`, News and Video - Waterfox
 ; IfWinActive, msn`, with Outlook.com`, Skype`, news and Hotmail - Waterfox
 ; IfWinActive, msn`, with Outlook.com`, Skype`, and news - Waterfox
@@ -284,6 +284,7 @@ autoclose Known Issues:
 
 
 autoclose Version History:
+19.2 - Updated Outlook.com section.
 19.1 - Updated Outlook.com section.
 19.0 - Disabled Maze section.
 18.2 - Disabled Logitech Gaming Software section.
