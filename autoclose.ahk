@@ -2,7 +2,7 @@
 *********************************************************************************
 * autoclose																		*
 *                                                                               *
-* Version:              20.0                                                    *
+* Version:              21.0                                                    *
 * AutoHotkey Version:   1.1                                                     *
 * Language:       		English                                                 *
 * Platform:       		Windows 7, 8                                            *
@@ -95,10 +95,10 @@ IfWinActive, How long would you like to sleep?
 
 
 ;Internet Explorer (default browser prompt)
-IfWinActive, Internet Explorer is not your default browser
-	{
-	Send ^w
-	}
+;IfWinActive, Internet Explorer is not your default browser
+;	{
+;	Send ^w
+;	}
 	
 	
 	
@@ -187,10 +187,10 @@ IfWinActive, ManageEngine ServiceDesk Plus - Send Notification
 
 
 ; Mouse and Keyboard Center
-IfWinActive, Please wait while the application opens: MouseKeyboardCenter.exe
-{
-	SendInput !C
-}
+;IfWinActive, Please wait while the application opens: MouseKeyboardCenter.exe
+;{
+;	SendInput !C
+;}
 
 
 
@@ -244,6 +244,7 @@ IfWinActive, Program Compatibility Assistant
 ;Scan and fix
 IfWinActive, , Scan and fix (recommended)
 	{
+		Sleep, 500
 	Send {Escape}
 	}
 	
@@ -293,6 +294,9 @@ autoclose Known Issues:
 
 
 autoclose Version History:
+21.0 - Disabled old section: Internet Explorer.
+	 - Disabled old section: Mouse and Keyboard Center.
+	 - Updated Scan And Fix section: Added 500ms sleep for whe I actually want to scan and fix.
 20.0 - Added Skype for Business section.
 19.2 - Updated Outlook.com section.
 19.1 - Updated Outlook.com section.

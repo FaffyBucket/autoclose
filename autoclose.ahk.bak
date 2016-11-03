@@ -2,7 +2,7 @@
 *********************************************************************************
 * autoclose																		*
 *                                                                               *
-* Version:              19.2                                                    *
+* Version:              20.0                                                    *
 * AutoHotkey Version:   1.1                                                     *
 * Language:       		English                                                 *
 * Platform:       		Windows 7, 8                                            *
@@ -293,6 +293,7 @@ autoclose Known Issues:
 
 
 autoclose Version History:
+20.0 - Added Skype for Business section.
 19.2 - Updated Outlook.com section.
 19.1 - Updated Outlook.com section.
 19.0 - Disabled Maze section.
