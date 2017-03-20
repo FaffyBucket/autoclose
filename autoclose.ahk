@@ -94,17 +94,17 @@ IfWinActive, How long would you like to sleep?
 
 
 
-;Internet Explorer (default browser prompt)
-;IfWinActive, Internet Explorer is not your default browser
-;	{
-;	Send ^w
-;	}
+/*; Internet Explorer (default browser prompt)
+ *IfWinActive, Internet Explorer is not your default browser
+ *	{
+ *	Send ^w
+ *	}
+ */
 	
 	
 	
 	
-/* 
- * LastPass CC fill
+/* ; LastPass CC fill
  * IfWinActive, LastPass FF Toolbar,
  * 	{
  * 	SendInput {Enter}
@@ -114,16 +114,16 @@ IfWinActive, How long would you like to sleep?
 
 
 
-
-;Logitech Gaming Software (LGS launches when device disconnected)
-;~ IfWinActive, Logitech Gaming Software	;, , , qt_scrollarea_viewport
-	;~ {
-	;~ if already_run_lgs != 1
-		;~ {
-		;~ WinClose
-		;~ already_run_lgs = 1
-		;~ }
-	;~ }
+/*; Logitech Gaming Software (LGS launches when device disconnected)
+* IfWinActive, Logitech Gaming Software	;, , , qt_scrollarea_viewport
+*	 {
+*	 if already_run_lgs != 1
+*		 {
+*		 WinClose
+*		 already_run_lgs = 1
+*		 }
+*	 }
+*/
 
 
 
@@ -159,7 +159,7 @@ IfWinActive, ManageEngine ServiceDesk Plus - Send Notification
 	if last_active_id != %active_id%
 	{
 		SendInput #{Up}
-		Sleep, 2000
+		Sleep, 2500
 		SendInput CHECK THE CCs
 		SendInput {Enter 2}
 		last_active_id = %active_id%
@@ -294,6 +294,7 @@ autoclose Known Issues:
 
 
 autoclose Version History:
+21.1 - Increased sleep time in ManageEngine ServiceDesk Plus section.
 21.0 - Disabled old section: Internet Explorer.
 	 - Disabled old section: Mouse and Keyboard Center.
 	 - Updated Scan And Fix section: Added 500ms sleep for whe I actually want to scan and fix.
