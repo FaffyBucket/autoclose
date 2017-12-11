@@ -2,7 +2,7 @@
 *********************************************************************************
 * autoclose																		*
 *                                                                               *
-* Version:              22.0                                                    *
+* Version:              22.1.2                                                  *
 * AutoHotkey Version:   1.1                                                     *
 * Language:       		English                                                 *
 * Platform:       		Windows 7, 8                                            *
@@ -175,12 +175,13 @@ IfWinActive, ManageEngine ServiceDesk Plus - Send Notification
 	WinGet, active_id, ID, A
 	if last_active_id != %active_id%
 	{
+;		Sleep, 2000
+;		SendInput {Tab 5}
 		SendInput #{Up}
-		Sleep, 3000
-		SendInput CHECK THE CCs
-		SendInput {Enter 2}
-		SendInput {Up 2}
-		SendInput +{End}
+;		SendInput CHECK THE CCs
+;		SendInput {Enter 2}
+;		SendInput {Up 2}
+;		SendInput +{End}
 		last_active_id = %active_id%
 	}
 }
@@ -313,6 +314,7 @@ autoclose Known Issues:
 
 
 autoclose Version History:
+22.1 - Updated ManageEngine section.
 22.0 - Added Active Directory Users and Computers - Reset Password
      - Updated ManageEngine ServiceDesk Plus [Send Notification].
 21.1 - Increased sleep time in ManageEngine ServiceDesk Plus section.
