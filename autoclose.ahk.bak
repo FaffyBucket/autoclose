@@ -2,7 +2,7 @@
 *********************************************************************************
 * autoclose																		*
 *                                                                               *
-* Version:              22.1.1                                                  *
+* Version:              23.0.0                                                  *
 * AutoHotkey Version:   1.1                                                     *
 * Language:       		English                                                 *
 * Platform:       		Windows 7, 8                                            *
@@ -175,13 +175,13 @@ IfWinActive, ManageEngine ServiceDesk Plus - Send Notification
 	WinGet, active_id, ID, A
 	if last_active_id != %active_id%
 	{
-		Sleep, 2000
-		SendInput {Tab 5}
+;		Sleep, 2000
+;		SendInput {Tab 5}
 		SendInput #{Up}
-		SendInput CHECK THE CCs
-		SendInput {Enter 2}
-		SendInput {Up 2}
-		SendInput +{End}
+;		SendInput CHECK THE CCs
+;		SendInput {Enter 2}
+;		SendInput {Up 2}
+;		SendInput +{End}
 		last_active_id = %active_id%
 	}
 }
@@ -284,6 +284,19 @@ IfWinActive, Microsoft Outlook, We're sorry
 IfWinActive, Spotify
 {
 	RegDelete, HKEY_CURRENT_USER, Software\Microsoft\Windows\CurrentVersion\Run, Spotify
+}
+
+
+
+
+; Synergetic
+IfWinActive, Information ahk_exe SynMain.exe
+{
+	SendInput {Enter}
+}
+IfWinActive, Synergetic Login
+{
+	SendInput {Enter}
 }
 
 

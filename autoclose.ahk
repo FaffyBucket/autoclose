@@ -2,10 +2,10 @@
 *********************************************************************************
 * autoclose																		*
 *                                                                               *
-* Version:              22.1.2                                                  *
+* Version:              23.0.0                                                  *
 * AutoHotkey Version:   1.1                                                     *
 * Language:       		English                                                 *
-* Platform:       		Windows 7, 8                                            *
+* Platform:       		Windows 10                                              *
 * Author:         		www.twitter.com/matthiew                                *
 *                                                                               *
 * Script Function: Searches for a specific window and does something when it    *
@@ -289,6 +289,19 @@ IfWinActive, Spotify
 
 
 
+; Synergetic
+IfWinActive, Information ahk_exe SynMain.exe
+{
+	SendInput {Enter}
+}
+IfWinActive, Synergetic Login
+{
+	SendInput {Enter}
+}
+
+
+
+
 /* ; Titanfall (crash on close)
  * IfWinExist, TitanFall.exe, Check online for a solution and close the program
  * {
@@ -314,6 +327,7 @@ autoclose Known Issues:
 
 
 autoclose Version History:
+23.0 - Added Synergetic section.
 22.1 - Updated ManageEngine section.
 22.0 - Added Active Directory Users and Computers - Reset Password
      - Updated ManageEngine ServiceDesk Plus [Send Notification].
