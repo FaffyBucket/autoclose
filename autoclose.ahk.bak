@@ -2,7 +2,7 @@
 *********************************************************************************
 * autoclose																		*
 *                                                                               *
-* Version:              23.0.0                                                  *
+* Version:              23.1                                                    *
 * AutoHotkey Version:   1.1                                                     *
 * Language:       		English                                                 *
 * Platform:       		Windows 10                                              *
@@ -292,6 +292,7 @@ IfWinActive, Spotify
 ; Synergetic
 IfWinActive, Information ahk_exe SynMain.exe
 {
+	Sleep, 500
 	SendInput {Enter}
 }
 IfWinActive, Synergetic Login
@@ -327,6 +328,7 @@ autoclose Known Issues:
 
 
 autoclose Version History:
+23.1 - Added sleep to Synergetic section.
 23.0 - Added Synergetic section.
 22.1 - Updated ManageEngine section.
 22.0 - Added Active Directory Users and Computers - Reset Password
