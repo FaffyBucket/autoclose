@@ -2,7 +2,7 @@
 *********************************************************************************
 * autoclose																		*
 *                                                                               *
-* Version:              23.2                                                    *
+* Version:              24.0                                                    *
 * AutoHotkey Version:   1.1                                                     *
 * Language:       		English                                                 *
 * Platform:       		Windows 10                                              *
@@ -83,6 +83,16 @@ IfWinActive, Reset Password
  * }
  */
 
+
+
+
+; Avira ads
+IfWinExist, ahk_exe ipmGui.exe
+{
+	Run notepad.exe
+	SendInput Attempting to close Avira ad...
+	WinClose	;, ahk_exe ipmGui.exe
+}
 
 
 
@@ -332,6 +342,7 @@ autoclose Known Issues:
 
 
 autoclose Version History:
+24.0 - Added Avira ads section.
 23.2 - Added Synergetic close confirmation.
 23.1 - Added sleep to Synergetic section.
 23.0 - Added Synergetic section.
