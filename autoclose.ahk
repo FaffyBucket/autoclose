@@ -2,7 +2,7 @@
 *********************************************************************************
 * autoclose																		*
 *                                                                               *
-* Version:              24.1                                                    *
+* Version:              24.2                                                    *
 * AutoHotkey Version:   1.1                                                     *
 * Language:       		English                                                 *
 * Platform:       		Windows 10                                              *
@@ -248,7 +248,7 @@ IfWinActive, Open File - Security Warning
 
 
 ; Outlook.com (return to login screen on logout)
-IfWinActive, MSN Australia | Hotmail login`, Breaking news`, Outlook`, Skype and Video - Waterfox
+IfWinActive, MSN Australia | Hotmail login`, Breaking news`, Outlook`, Skype and Video
 ; IfWinActive, MSN Australia | Hotmail`, Outlook`, Skype`, News and Video - Waterfox
 ; IfWinActive, msn`, with Outlook.com`, Skype`, news and Hotmail - Waterfox
 ; IfWinActive, msn`, with Outlook.com`, Skype`, and news - Waterfox
@@ -340,6 +340,7 @@ autoclose Known Issues:
 
 
 autoclose Version History:
+24.2 - Updated Outlook.com section to be browser agnostic.
 24.1 - Added Avira ads section.
 23.2 - Added Synergetic close confirmation.
 23.1 - Added sleep to Synergetic section.
