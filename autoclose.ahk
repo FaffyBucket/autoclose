@@ -2,7 +2,7 @@
 *********************************************************************************
 * autoclose																		*
 *                                                                               *
-* Version:              24.2                                                    *
+* Version:              25.0                                                    *
 * AutoHotkey Version:   1.1                                                     *
 * Language:       		English                                                 *
 * Platform:       		Windows 10                                              *
@@ -86,11 +86,12 @@ IfWinActive, Reset Password
 
 
 
-; Avira ads
-IfWinExist, ahk_exe ipmGui.exe
-{
-	WinClose
-}
+/* ; Avira ads
+ * IfWinExist, ahk_exe ipmGui.exe
+ * {
+ * 	WinClose
+ * }
+ */
 
 
 
@@ -110,10 +111,20 @@ IfWinActive, Run In Safe Mode?
 
 
 
-; CrashPlan (sleep)
-IfWinActive, How long would you like to sleep?
+/* ; CrashPlan (sleep)
+ * IfWinActive, How long would you like to sleep?
+ * {
+ * 	SendInput {Enter}
+ * }
+ */
+
+
+
+
+; FileBot
+IfWinActive, New updates available ahk_exe java.exe
 {
-	SendInput {Enter}
+	Send !{F4}
 }
 
 
@@ -340,6 +351,9 @@ autoclose Known Issues:
 
 
 autoclose Version History:
+25.0 - Added FileBot section.
+	 - Disabled Avira section.
+	 - Disabled Crashplan section.
 24.2 - Updated Outlook.com section to be browser agnostic.
 24.1 - Added Avira ads section.
 23.2 - Added Synergetic close confirmation.
