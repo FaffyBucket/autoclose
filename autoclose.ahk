@@ -2,7 +2,7 @@
 *********************************************************************************
 * autoclose																		*
 *                                                                               *
-* Version:              25.0                                                    *
+* Version:              26.0                                                    *
 * AutoHotkey Version:   1.1                                                     *
 * Language:       		English                                                 *
 * Platform:       		Windows 10                                              *
@@ -45,15 +45,27 @@ ifwinactive:
 
 ;Acrobat Pro
 IfWinActive, - Adobe Acrobat Pro ;ahk_exe acrobat.exe
-	{
+{
 	WinGet, active_id, ID, A
 	if last_active_id != %active_id%
-		{
+	{
 		Send ^1
 		Send !vpc
 		last_active_id = %active_id%
-		}
 	}
+}
+
+;Acrobat Reader DC
+IfWinActive, - Adobe Acrobat Reader DC
+{
+	WinGet, active_id, ID, A
+	if last_active_id != %active_id%
+	{
+		Send ^1
+		Send !vpc
+		last_active_id = %active_id%
+	}
+}
 
 
 
@@ -351,6 +363,7 @@ autoclose Known Issues:
 
 
 autoclose Version History:
+26.0 - Added Acrobat Reader DC section.
 25.0 - Added FileBot section.
 	 - Disabled Avira section.
 	 - Disabled Crashplan section.

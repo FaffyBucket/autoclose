@@ -124,7 +124,7 @@ IfWinActive, Run In Safe Mode?
 ; FileBot
 IfWinActive, New updates available ahk_exe java.exe
 {
-	Send !F4
+	Send !{F4}
 }
 
 
