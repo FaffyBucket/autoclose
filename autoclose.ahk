@@ -2,7 +2,7 @@
 *********************************************************************************
 * autoclose																		*
 *                                                                               *
-* Version:              26.2                                                    *
+* Version:              27.0                                                    *
 * AutoHotkey Version:   1.1                                                     *
 * Language:       		English                                                 *
 * Platform:       		Windows 10                                              *
@@ -272,6 +272,15 @@ IfWinActive, Open File - Security Warning
 
 
 
+; Origin Crash Reporter
+IfWinActive, Origin Crash Reporter
+{
+	SendInput {Enter}
+}
+
+
+
+
 ; Outlook.com (return to login screen on logout)
 IfWinActive, MSN Australia | Hotmail login`, Breaking news`, Outlook`, Skype and Video
 ; IfWinActive, MSN Australia | Hotmail`, Outlook`, Skype`, News and Video - Waterfox
@@ -365,6 +374,7 @@ autoclose Known Issues:
 
 
 autoclose Version History:
+27.0 - Added Origin Crash Reporter section.
 26.2 - Enabled Acrobat Reader DC section.
 	 - Updated Acrobat Reader DC section to hide the Tools
 26.1 - Disabled Acrobat Pro section.
