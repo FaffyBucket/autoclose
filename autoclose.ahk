@@ -2,7 +2,7 @@
 *********************************************************************************
 * autoclose																		*
 *                                                                               *
-* Version:              27.0                                                    *
+* Version:              28.0                                                    *
 * AutoHotkey Version:   1.1                                                     *
 * Language:       		English                                                 *
 * Platform:       		Windows 10                                              *
@@ -131,6 +131,21 @@ IfWinActive, Run In Safe Mode?
  * 	SendInput {Enter}
  * }
  */
+
+
+
+
+; Default Browser
+IfWinActive, Default Browser
+{
+	SendInput {Enter}
+	Sleep, 1000
+	SendInput {Enter}
+	Sleep, 2000
+	SendInput {Tab}
+	SendInput {Enter}
+	SendInput !{F4}
+}
 
 
 
@@ -374,6 +389,7 @@ autoclose Known Issues:
 
 
 autoclose Version History:
+28.0 - Added Default Browser section.
 27.0 - Added Origin Crash Reporter section.
 26.2 - Enabled Acrobat Reader DC section.
 	 - Updated Acrobat Reader DC section to hide the Tools
