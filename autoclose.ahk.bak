@@ -2,7 +2,7 @@
 *********************************************************************************
 * autoclose																		*
 *                                                                               *
-* Version:              26.2                                                    *
+* Version:              28.1                                                    *
 * AutoHotkey Version:   1.1                                                     *
 * Language:       		English                                                 *
 * Platform:       		Windows 10                                              *
@@ -131,6 +131,22 @@ IfWinActive, Run In Safe Mode?
  * 	SendInput {Enter}
  * }
  */
+
+
+
+
+; Default Browser
+IfWinActive, Default Browser
+{
+	SendInput {Enter}
+	Sleep, 2000
+	SendInput {Enter}
+	Sleep, 1500
+	SendInput {Tab}
+	SendInput {Enter}
+	Sleep, 1000
+	SendInput !{F4}
+}
 
 
 
@@ -272,6 +288,15 @@ IfWinActive, Open File - Security Warning
 
 
 
+; Origin Crash Reporter
+IfWinActive, Origin Crash Reporter
+{
+	SendInput {Enter}
+}
+
+
+
+
 ; Outlook.com (return to login screen on logout)
 IfWinActive, MSN Australia | Hotmail login`, Breaking news`, Outlook`, Skype and Video
 ; IfWinActive, MSN Australia | Hotmail`, Outlook`, Skype`, News and Video - Waterfox
@@ -365,6 +390,9 @@ autoclose Known Issues:
 
 
 autoclose Version History:
+20.1 - Default Browser: adjusted timings.
+28.0 - Added Default Browser section.
+27.0 - Added Origin Crash Reporter section.
 26.2 - Enabled Acrobat Reader DC section.
 	 - Updated Acrobat Reader DC section to hide the Tools
 26.1 - Disabled Acrobat Pro section.

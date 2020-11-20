@@ -2,7 +2,7 @@
 *********************************************************************************
 * autoclose																		*
 *                                                                               *
-* Version:              28.0                                                    *
+* Version:              28.2                                                    *
 * AutoHotkey Version:   1.1                                                     *
 * Language:       		English                                                 *
 * Platform:       		Windows 10                                              *
@@ -57,17 +57,18 @@ ifwinactive:
  */
 
 ;Acrobat Reader DC
-IfWinActive, - Adobe Acrobat Reader DC
-{
-	WinGet, active_id, ID, A
-	if last_active_id != %active_id%
-	{
-;		Send ^1
-;		Send !vpc
-		SendInput +{F4}
-		last_active_id = %active_id%
-	}
-}
+/* IfWinActive, - Adobe Acrobat Reader DC
+ * {
+ * 	WinGet, active_id, ID, A
+ * 	if last_active_id != %active_id%
+ * 	{
+ * ;		Send ^1
+ * ;		Send !vpc
+ * 		SendInput +{F4}
+ * 		last_active_id = %active_id%
+ * 	}
+ * }
+ */
 
 
 
@@ -139,11 +140,12 @@ IfWinActive, Run In Safe Mode?
 IfWinActive, Default Browser
 {
 	SendInput {Enter}
-	Sleep, 1000
+	Sleep, 1500 ;2000
 	SendInput {Enter}
-	Sleep, 2000
+	Sleep, 1500
 	SendInput {Tab}
 	SendInput {Enter}
+	Sleep, 1000
 	SendInput !{F4}
 }
 
@@ -205,34 +207,35 @@ IfWinActive, New updates available ahk_exe java.exe
 
 ; ManageEngine ServiceDesk Plus
 ; [Reminder]
-IfWinActive, Servicedesk - Reminder
-{
-	WinGet, active_id, ID, A
-	if last_active_id != %active_id%
-	{
-		SendInput #{Up}
-		SendInput {Tab 4}
-		SendInput 1
-		SendInput +{Tab 3}
-		last_active_id = %active_id%
-	}
-}
-; [Send Notification]
-IfWinActive, ManageEngine ServiceDesk Plus - Send Notification
-{
-	WinGet, active_id, ID, A
-	if last_active_id != %active_id%
-	{
-;		Sleep, 2000
-;		SendInput {Tab 5}
-		SendInput #{Up}
-;		SendInput CHECK THE CCs
-;		SendInput {Enter 2}
-;		SendInput {Up 2}
-;		SendInput +{End}
-		last_active_id = %active_id%
-	}
-}
+/* IfWinActive, Servicedesk - Reminder
+ * {
+ * 	WinGet, active_id, ID, A
+ * 	if last_active_id != %active_id%
+ * 	{
+ * 		SendInput #{Up}
+ * 		SendInput {Tab 4}
+ * 		SendInput 1
+ * 		SendInput +{Tab 3}
+ * 		last_active_id = %active_id%
+ * 	}
+ * }
+ * ; [Send Notification]
+ * IfWinActive, ManageEngine ServiceDesk Plus - Send Notification
+ * {
+ * 	WinGet, active_id, ID, A
+ * 	if last_active_id != %active_id%
+ * 	{
+ * ;		Sleep, 2000
+ * ;		SendInput {Tab 5}
+ * 		SendInput #{Up}
+ * ;		SendInput CHECK THE CCs
+ * ;		SendInput {Enter 2}
+ * ;		SendInput {Up 2}
+ * ;		SendInput +{End}
+ * 		last_active_id = %active_id%
+ * 	}
+ * }
+ */
 
 
 
@@ -329,10 +332,11 @@ IfWinActive, , Scan and fix (recommended)
 	
 	
 ;Skype for Business
-IfWinActive, Microsoft Outlook, We're sorry
-{
-	Send {Escape}
-}
+/* IfWinActive, Microsoft Outlook, We're sorry
+ * {
+ * 	Send {Escape}
+ * }
+ */
 	
 	
 	
@@ -389,6 +393,9 @@ autoclose Known Issues:
 
 
 autoclose Version History:
+20.2 - Disabled old functions.
+	 - Default Browser: adjusted timings.
+20.1 - Default Browser: adjusted timings.
 28.0 - Added Default Browser section.
 27.0 - Added Origin Crash Reporter section.
 26.2 - Enabled Acrobat Reader DC section.
