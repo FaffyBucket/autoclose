@@ -2,7 +2,7 @@
 *********************************************************************************
 * autoclose																		*
 *                                                                               *
-* Version:              28.2                                                    *
+* Version:              28.3                                                    *
 * AutoHotkey Version:   1.1                                                     *
 * Language:       		English                                                 *
 * Platform:       		Windows 10                                              *
@@ -139,14 +139,16 @@ IfWinActive, Run In Safe Mode?
 ; Default Browser
 IfWinActive, Default Browser
 {
+    SetDefaultMouseSpeed, 100
 	SendInput {Enter}
-	Sleep, 1500 ;2000
+	Sleep, 1600 ; 1500 too short
 	SendInput {Enter}
-	Sleep, 1500
+	Sleep, 1200 ; 1500
 	SendInput {Tab}
 	SendInput {Enter}
 	Sleep, 1000
 	SendInput !{F4}
+    SetDefaultMouseSpeed, A_DefaultMouseSpeed
 }
 
 
@@ -393,9 +395,11 @@ autoclose Known Issues:
 
 
 autoclose Version History:
-20.2 - Disabled old functions.
+28.3 - Default Browser: adjusted timings.
+     - Default Browser: added mouse interference.
+28.2 - Disabled old functions.
 	 - Default Browser: adjusted timings.
-20.1 - Default Browser: adjusted timings.
+28.1 - Default Browser: adjusted timings.
 28.0 - Added Default Browser section.
 27.0 - Added Origin Crash Reporter section.
 26.2 - Enabled Acrobat Reader DC section.
