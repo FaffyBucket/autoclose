@@ -2,7 +2,7 @@
 *********************************************************************************
 * autoclose																		*
 *                                                                               *
-* Version:              28.3                                                    *
+* Version:              28.4                                                    *
 * AutoHotkey Version:   1.1                                                     *
 * Language:       		English                                                 *
 * Platform:       		Windows 10                                              *
@@ -141,13 +141,13 @@ IfWinActive, Default Browser
 {
     SetDefaultMouseSpeed, 100
 	SendInput {Enter}
-	Sleep, 1600 ; 1500 too short
+	Sleep, 1700 ; 1600 too short
 	SendInput {Enter}
-	Sleep, 1200 ; 1500
+	Sleep, 1500 ; 1300 1500
 	SendInput {Tab}
 	SendInput {Enter}
 	Sleep, 1000
-	SendInput !{F4}
+;	SendInput !{F4}
     SetDefaultMouseSpeed, A_DefaultMouseSpeed
 }
 
@@ -395,6 +395,7 @@ autoclose Known Issues:
 
 
 autoclose Version History:
+28.4 - Default Browser: adjusted timings, stopped closing.
 28.3 - Default Browser: adjusted timings.
      - Default Browser: added mouse interference.
 28.2 - Disabled old functions.
