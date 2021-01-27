@@ -82,7 +82,9 @@ IfWinActive, Reset Password
 		SendInput Password1
 		SendInput {Tab}
 		SendInput Password1
-		SendInput {Tab 2}
+		SendInput {Tab}
+        SendInput {Space}
+        SendInput {Tab 2}
 		last_active_id = %active_id%
 	}
 }
@@ -395,6 +397,7 @@ autoclose Known Issues:
 
 
 autoclose Version History:
+28.4 - Default Browser: adjusted timings, stopped closing.
 28.3 - Default Browser: adjusted timings.
      - Default Browser: added mouse interference.
 28.2 - Disabled old functions.

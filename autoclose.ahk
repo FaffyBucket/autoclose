@@ -2,7 +2,7 @@
 *********************************************************************************
 * autoclose																		*
 *                                                                               *
-* Version:              28.4                                                    *
+* Version:              28.5                                                    *
 * AutoHotkey Version:   1.1                                                     *
 * Language:       		English                                                 *
 * Platform:       		Windows 10                                              *
@@ -82,7 +82,9 @@ IfWinActive, Reset Password
 		SendInput Password1
 		SendInput {Tab}
 		SendInput Password1
-		SendInput {Tab 2}
+		SendInput {Tab}
+        SendInput {Space}
+        SendInput {Tab 2}
 		last_active_id = %active_id%
 	}
 }
@@ -395,6 +397,7 @@ autoclose Known Issues:
 
 
 autoclose Version History:
+28.5 - Active Directory Users and Computers - Reset Password: Updated password
 28.4 - Default Browser: adjusted timings, stopped closing.
 28.3 - Default Browser: adjusted timings.
      - Default Browser: added mouse interference.
