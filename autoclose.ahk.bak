@@ -2,7 +2,7 @@
 *********************************************************************************
 * autoclose																		*
 *                                                                               *
-* Version:              28.4                                                    *
+* Version:              29.0                                                    *
 * AutoHotkey Version:   1.1                                                     *
 * Language:       		English                                                 *
 * Platform:       		Windows 10                                              *
@@ -42,34 +42,35 @@ ifwinactive:
 
 
 
-
+/* 
 ;Acrobat Pro
-/* IfWinActive, - Adobe Acrobat Pro ;ahk_exe acrobat.exe
- * {
- * 	WinGet, active_id, ID, A
- * 	if last_active_id != %active_id%
- * 	{
- * 		Send ^1
- * 		Send !vpc
- * 		last_active_id = %active_id%
- * 	}
- * }
+IfWinActive, - Adobe Acrobat Pro ;ahk_exe acrobat.exe
+{
+	WinGet, active_id, ID, A
+	if last_active_id != %active_id%
+	{
+		Send ^1
+		Send !vpc
+		last_active_id = %active_id%
+	}
+}
  */
 
+
+/* 
 ;Acrobat Reader DC
-/* IfWinActive, - Adobe Acrobat Reader DC
- * {
- * 	WinGet, active_id, ID, A
- * 	if last_active_id != %active_id%
- * 	{
- * ;		Send ^1
- * ;		Send !vpc
- * 		SendInput +{F4}
- * 		last_active_id = %active_id%
- * 	}
- * }
+IfWinActive, - Adobe Acrobat Reader DC
+{
+	WinGet, active_id, ID, A
+	if last_active_id != %active_id%
+	{
+;		Send ^1
+;		Send !vpc
+		SendInput +{F4}
+		last_active_id = %active_id%
+	}
+}
  */
-
 
 
 
@@ -92,24 +93,33 @@ IfWinActive, Reset Password
 
 
 
+; Apex Legends
+IfWinActive, Apex Legends
+{
+    WinWaitNotActive, Apex Legends
+    {
+        SetCapsLockState, Off
+    }
+}
+
+
+
 /* 
- * AutoHotkey (#SingleInstance)
- * IfWinActive, , An older instance of this script is already running.
- * {
- * 	SendInput !Y
- * }
+; AutoHotkey (#SingleInstance)
+IfWinActive, , An older instance of this script is already running.
+{
+	SendInput !Y
+}
  */
 
 
-
-
-/* ; Avira ads
- * IfWinExist, ahk_exe ipmGui.exe
- * {
- * 	WinClose
- * }
+/* 
+; Avira ads
+IfWinExist, ahk_exe ipmGui.exe
+{
+	WinClose
+}
  */
-
 
 
 
@@ -127,17 +137,16 @@ IfWinActive, Run In Safe Mode?
 
 
 
-
-/* ; CrashPlan (sleep)
- * IfWinActive, How long would you like to sleep?
- * {
- * 	SendInput {Enter}
- * }
+/* 
+; CrashPlan (sleep)
+IfWinActive, How long would you like to sleep?
+{
+	SendInput {Enter}
+}
  */
 
 
-
-
+/* 
 ; Default Browser
 IfWinActive, Default Browser
 {
@@ -152,7 +161,7 @@ IfWinActive, Default Browser
 ;	SendInput !{F4}
     SetDefaultMouseSpeed, A_DefaultMouseSpeed
 }
-
+ */
 
 
 
@@ -164,112 +173,107 @@ IfWinActive, New updates available ahk_exe java.exe
 
 
 
-
-/*; Internet Explorer (default browser prompt)
- *IfWinActive, Internet Explorer is not your default browser
- *	{
- *	Send ^w
- *	}
- */
-	
-	
-	
-	
-/* ; LastPass CC fill
- * IfWinActive, LastPass FF Toolbar,
- * 	{
- * 	SendInput {Enter}
- * 	}
+/* 
+; Internet Explorer (default browser prompt)
+IfWinActive, Internet Explorer is not your default browser
+	{
+	Send ^w
+	}
  */
 
 
-
-
-/*; Logitech Gaming Software (LGS launches when device disconnected)
-* IfWinActive, Logitech Gaming Software	;, , , qt_scrollarea_viewport
-*	 {
-*	 if already_run_lgs != 1
-*		 {
-*		 WinClose
-*		 already_run_lgs = 1
-*		 }
-*	 }
-*/
-
-
-
-
-/* ; MakeMKV (Create folder confirmation)
- * IfWinActive, MakeMKV BETA popup
- * {
- * 	SendInput !y
- * }
+/* 
+; LastPass CC fill
+IfWinActive, LastPass FF Toolbar,
+	{
+	SendInput {Enter}
+	}
  */
 
 
+/* 
+; Logitech Gaming Software (LGS launches when device disconnected)
+IfWinActive, Logitech Gaming Software	;, , , qt_scrollarea_viewport
+	 {
+	 if already_run_lgs != 1
+		 {
+		 WinClose
+		 already_run_lgs = 1
+		 }
+	 }
+ */
 
 
+/* 
+; MakeMKV (Create folder confirmation)
+IfWinActive, MakeMKV BETA popup
+{
+	SendInput !y
+}
+ */
+
+
+/* 
 ; ManageEngine ServiceDesk Plus
 ; [Reminder]
-/* IfWinActive, Servicedesk - Reminder
- * {
- * 	WinGet, active_id, ID, A
- * 	if last_active_id != %active_id%
- * 	{
- * 		SendInput #{Up}
- * 		SendInput {Tab 4}
- * 		SendInput 1
- * 		SendInput +{Tab 3}
- * 		last_active_id = %active_id%
- * 	}
- * }
- * ; [Send Notification]
- * IfWinActive, ManageEngine ServiceDesk Plus - Send Notification
- * {
- * 	WinGet, active_id, ID, A
- * 	if last_active_id != %active_id%
- * 	{
- * ;		Sleep, 2000
- * ;		SendInput {Tab 5}
- * 		SendInput #{Up}
- * ;		SendInput CHECK THE CCs
- * ;		SendInput {Enter 2}
- * ;		SendInput {Up 2}
- * ;		SendInput +{End}
- * 		last_active_id = %active_id%
- * 	}
- * }
+IfWinActive, Servicedesk - Reminder
+{
+	WinGet, active_id, ID, A
+	if last_active_id != %active_id%
+	{
+		SendInput #{Up}
+		SendInput {Tab 4}
+		SendInput 1
+		SendInput +{Tab 3}
+		last_active_id = %active_id%
+	}
+}
+; [Send Notification]
+IfWinActive, ManageEngine ServiceDesk Plus - Send Notification
+{
+	WinGet, active_id, ID, A
+	if last_active_id != %active_id%
+	{
+;		Sleep, 2000
+;		SendInput {Tab 5}
+		SendInput #{Up}
+;		SendInput CHECK THE CCs
+;		SendInput {Enter 2}
+;		SendInput {Up 2}
+;		SendInput +{End}
+		last_active_id = %active_id%
+	}
+}
  */
 
 
+/* 
+;Maze
+; Exit confirmation
+IfWinActive, Exit, Are you sure you want to exit?
+{
+	Send !Y
+}
+; Login with Windows Authentication
+IfWinActive, Login, This is my preferred database
+{
+	SendInput {Tab}
+	SendInput {Space}
+	SendInput !o
+}
+ */
 
 
-;~ ;Maze
-;~ ; Exit confirmation
-;~ IfWinActive, Exit, Are you sure you want to exit?
-;~ {
-	;~ Send !Y
-;~ }
-;~ ; Login with Windows Authentication
-;~ IfWinActive, Login, This is my preferred database
-;~ {
-	;~ SendInput {Tab}
-	;~ SendInput {Space}
-	;~ SendInput !o
-;~ }
-
-
-
-
+/* 
 ; Mouse and Keyboard Center
-;IfWinActive, Please wait while the application opens: MouseKeyboardCenter.exe
-;{
-;	SendInput !C
-;}
+IfWinActive, Please wait while the application opens: MouseKeyboardCenter.exe
+{
+	SendInput !C
+}
+ */
 
 
-
-
+/* 
 ;Nitro Reader (set Actual Size, Continuous)
 IfWinActive,  - Nitro Reader 3
 	{
@@ -281,10 +285,10 @@ IfWinActive,  - Nitro Reader 3
 		last_active_id = %active_id%
 		}
 	}
-	
-	
-	
-	
+ */
+
+
+
 ; Open File - Security Warning
 IfWinActive, Open File - Security Warning
 	{
@@ -331,20 +335,19 @@ IfWinActive, , Scan and fix (recommended)
 		Sleep, 500
 	Send {Escape}
 	}
-	
-	
-	
-	
+
+
+
+/* 
 ;Skype for Business
-/* IfWinActive, Microsoft Outlook, We're sorry
- * {
- * 	Send {Escape}
- * }
+IfWinActive, Microsoft Outlook, We're sorry
+{
+	Send {Escape}
+}
  */
-	
-	
-	
-	
+ 
+ 
+ 
 ;Spotify (stops Spotify from running at login)
 IfWinActive, Spotify
 {
@@ -371,15 +374,14 @@ IfWinActive, Synergetic Login
 
 
 
-
-/* ; Titanfall (crash on close)
- * IfWinExist, TitanFall.exe, Check online for a solution and close the program
- * {
- * 	WinActivate, TitanFall.exe, Check online for a solution and close the program
- * 	SendInput {Esc}
- * }
+/* 
+; Titanfall (crash on close)
+IfWinExist, TitanFall.exe, Check online for a solution and close the program
+{
+	WinActivate, TitanFall.exe, Check online for a solution and close the program
+	SendInput {Esc}
+}
  */
-
 
 
 
@@ -397,6 +399,7 @@ autoclose Known Issues:
 
 
 autoclose Version History:
+28.5 - Active Directory Users and Computers - Reset Password: Updated password
 28.4 - Default Browser: adjusted timings, stopped closing.
 28.3 - Default Browser: adjusted timings.
      - Default Browser: added mouse interference.
