@@ -2,7 +2,7 @@
 *********************************************************************************
 * autoclose																		*
 *                                                                               *
-* Version:              29.0                                                    *
+* Version:              30.0                                                    *
 * AutoHotkey Version:   1.1                                                     *
 * Language:       		English                                                 *
 * Platform:       		Windows 10                                              *
@@ -88,6 +88,15 @@ IfWinActive, Reset Password
         SendInput {Tab 2}
 		last_active_id = %active_id%
 	}
+}
+
+
+; Active Directory Users and Computers - Startup Warning
+IfWinExist, Active Directory Domain Services
+{
+    WinActivate
+    Sleep, 500
+    WinClose
 }
 
 
@@ -399,6 +408,7 @@ autoclose Known Issues:
 
 
 autoclose Version History:
+30.0 - Added section: Active Directory Users and Computers - Startup Warning.
 29.0 - Added Apex Legends section.
 28.5 - Active Directory Users and Computers - Reset Password: Updated password
 28.4 - Default Browser: adjusted timings, stopped closing.
