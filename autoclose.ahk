@@ -2,7 +2,7 @@
 *********************************************************************************
 * autoclose																		*
 *                                                                               *
-* Version:              30.0                                                    *
+* Version:              31.0                                                    *
 * AutoHotkey Version:   1.1                                                     *
 * Language:       		English                                                 *
 * Platform:       		Windows 10                                              *
@@ -87,6 +87,16 @@ IfWinActive, Reset Password
         SendInput {Space}
         SendInput {Tab 2}
 		last_active_id = %active_id%
+	}
+}
+
+
+; Active Directory Users and Computers - Runas
+IfWinExist, Active Directory Users and Computers
+{
+	IfWinExist, cmd /c C:\Windows\system32\dsa.msc /domain=sthildas.wa.edu.au (running as sthildas-ad\mmarks-ad)
+	{
+		WinClose
 	}
 }
 
@@ -408,6 +418,7 @@ autoclose Known Issues:
 
 
 autoclose Version History:
+31.0 - Added section: Active Directory Users and Computers - Runas.
 30.0 - Added section: Active Directory Users and Computers - Startup Warning.
 29.0 - Added Apex Legends section.
 28.5 - Active Directory Users and Computers - Reset Password: Updated password
