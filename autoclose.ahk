@@ -1,16 +1,15 @@
 /*
-*********************************************************************************
-* autoclose																		*
-*                                                                               *
-* Version:              32.0                                                    *
-* AutoHotkey Version:   1.1                                                     *
-* Language:       		English                                                 *
-* Platform:       		Windows 10                                              *
-* Author:         		www.twitter.com/matthiew                                *
-*                                                                               *
-* Script Function: Searches for a specific window and does something when it    *
-* finds it.         															*
-*********************************************************************************
+*********************************************************************************************************************************
+* autoclose						                                                                                                *
+*                                                                                                                               *
+* Version:              32.1                                                                                                    *
+* AutoHotkey Version:   1.1                                                                                                     *
+* Language:       		English                                                                                                 *
+* Platform:       		Windows 10                                                                                              *
+* Author:         		www.twitter.com/matthiew                                                                                *
+*                                                                                                                               *
+* Script Function: Searches for a specific window and does something when it finds it.                                          *
+*********************************************************************************************************************************
 */
 
 if not A_IsAdmin
@@ -43,7 +42,7 @@ ifwinactive:
 
 
 /* 
-;Acrobat Pro
+; Acrobat Pro
 IfWinActive, - Adobe Acrobat Pro ;ahk_exe acrobat.exe
 {
 	WinGet, active_id, ID, A
@@ -58,7 +57,7 @@ IfWinActive, - Adobe Acrobat Pro ;ahk_exe acrobat.exe
 
 
 /* 
-;Acrobat Reader DC
+; Acrobat Reader DC
 IfWinActive, - Adobe Acrobat Reader DC
 {
 	WinGet, active_id, ID, A
@@ -102,7 +101,7 @@ IfWinExist, Active Directory Users and Computers
 
 
 ; Active Directory Users and Computers - Startup Warning
-IfWinExist, Active Directory Domain Services
+IfWinExist, Active Directory Domain Services, 2000 of
 {
     WinActivate
     Sleep, 500
@@ -419,7 +418,7 @@ return
 
 
 /*
-*********************************************************************************
+*********************************************************************************************************************************
 autoclose Known Issues:
  - none
 
@@ -427,6 +426,7 @@ autoclose Known Issues:
 
 
 autoclose Version History:
+32.1 - Updated Active Directory Users and Computers - Startup Warning: Added WinText to specify the window to close.
 32.0 - Added section: Remote Desktop Manager.
 31.0 - Added section: Active Directory Users and Computers - Runas.
 30.0 - Added section: Active Directory Users and Computers - Startup Warning.
@@ -506,5 +506,5 @@ autoclose Version History:
 7.2 - Updated documentation and reorganised files.
 7.1 - Updated documentation.
 7.0 - Imported to GitHub.
-*********************************************************************************
+*********************************************************************************************************************************
 */
