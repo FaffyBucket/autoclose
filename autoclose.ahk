@@ -2,7 +2,7 @@
 *********************************************************************************
 * autoclose																		*
 *                                                                               *
-* Version:              31.0                                                    *
+* Version:              32.0                                                    *
 * AutoHotkey Version:   1.1                                                     *
 * Language:       		English                                                 *
 * Platform:       		Windows 10                                              *
@@ -139,6 +139,14 @@ IfWinExist, ahk_exe ipmGui.exe
 	WinClose
 }
  */
+
+
+
+; BUFF App - Endgame
+IfWinExist, BUFF App - Endgame
+{
+	WinClose
+}
 
 
 
@@ -418,6 +426,7 @@ autoclose Known Issues:
 
 
 autoclose Version History:
+32.0 - Added BUFF section.
 31.0 - Added section: Active Directory Users and Computers - Runas.
 30.0 - Added section: Active Directory Users and Computers - Startup Warning.
 29.0 - Added Apex Legends section.
