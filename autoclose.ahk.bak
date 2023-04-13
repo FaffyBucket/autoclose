@@ -2,7 +2,7 @@
 *********************************************************************************************************************************
 * autoclose						                                                                                                *
 *                                                                                                                               *
-* Version:              33.0                                                                                                    *
+* Version:              33.1                                                                                                    *
 * AutoHotkey Version:   1.1                                                                                                     *
 * Language:       		English                                                                                                 *
 * Platform:       		Windows 10                                                                                              *
@@ -73,6 +73,7 @@ IfWinActive, - Adobe Acrobat Reader DC
 
 
 
+/*
 ; Active Directory Users and Computers - Reset Password
 IfWinActive, Reset Password
 {
@@ -88,6 +89,7 @@ IfWinActive, Reset Password
 		last_active_id = %active_id%
 	}
 }
+*/
 
 
 ; Active Directory Users and Computers - Runas
@@ -434,6 +436,7 @@ autoclose Known Issues:
  
  
 autoclose Version History:
+33.1 - Disabled ADUC section.
 33.0 - Added section: BUFF.
 32.1 - Updated Active Directory Users and Computers - Startup Warning: Added WinText to specify the window to close.
 32.0 - Added section: Remote Desktop Manager.

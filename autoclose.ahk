@@ -2,7 +2,7 @@
 *********************************************************************************************************************************
 * autoclose						                                                                                                *
 *                                                                                                                               *
-* Version:              33.1                                                                                                    *
+* Version:              33.2                                                                                                    *
 * AutoHotkey Version:   1.1                                                                                                     *
 * Language:       		English                                                                                                 *
 * Platform:       		Windows 10                                                                                              *
@@ -12,11 +12,13 @@
 *********************************************************************************************************************************
 */
 
+/*
 if not A_IsAdmin
 {
 	Run *RunAs "%A_AhkPath%" autoclose.ahk
 	ExitApp
 }
+*/
 
 #NoEnv  ; Recommended for performance and compatibility with future AHK releases.
 #Warn  ; Recommended for catching common errors.
@@ -41,7 +43,7 @@ ifwinactive:
 
 
 
-/* 
+/*
 ; Acrobat Pro
 IfWinActive, - Adobe Acrobat Pro ;ahk_exe acrobat.exe
 {
@@ -53,10 +55,10 @@ IfWinActive, - Adobe Acrobat Pro ;ahk_exe acrobat.exe
 		last_active_id = %active_id%
 	}
 }
- */
+*/
 
 
-/* 
+/*
 ; Acrobat Reader DC
 IfWinActive, - Adobe Acrobat Reader DC
 {
@@ -69,7 +71,7 @@ IfWinActive, - Adobe Acrobat Reader DC
 		last_active_id = %active_id%
 	}
 }
- */
+*/
 
 
 
@@ -92,6 +94,7 @@ IfWinActive, Reset Password
 */
 
 
+/*
 ; Active Directory Users and Computers - Runas
 IfWinExist, Active Directory Users and Computers
 {
@@ -100,8 +103,10 @@ IfWinExist, Active Directory Users and Computers
 		WinClose
 	}
 }
+*/
 
 
+/*
 ; Active Directory Users and Computers - Startup Warning
 IfWinExist, Active Directory Domain Services, 2000 of
 {
@@ -109,6 +114,7 @@ IfWinExist, Active Directory Domain Services, 2000 of
     Sleep, 500
     WinClose
 }
+*/
 
 
 
@@ -124,22 +130,22 @@ IfWinActive, Apex Legends
 
 
 
-/* 
+/*
 ; AutoHotkey (#SingleInstance)
 IfWinActive, , An older instance of this script is already running.
 {
 	SendInput !Y
 }
- */
+*/
 
 
-/* 
+/*
 ; Avira ads
 IfWinExist, ahk_exe ipmGui.exe
 {
 	WinClose
 }
- */
+*/
 
 
 
@@ -165,16 +171,16 @@ IfWinActive, Run In Safe Mode?
 
 
 
-/* 
+/*
 ; CrashPlan (sleep)
 IfWinActive, How long would you like to sleep?
 {
 	SendInput {Enter}
 }
- */
+*/
 
 
-/* 
+/*
 ; Default Browser
 IfWinActive, Default Browser
 {
@@ -189,7 +195,7 @@ IfWinActive, Default Browser
 ;	SendInput !{F4}
     SetDefaultMouseSpeed, A_DefaultMouseSpeed
 }
- */
+*/
 
 
 
@@ -201,25 +207,25 @@ IfWinActive, New updates available ahk_exe java.exe
 
 
 
-/* 
+/*
 ; Internet Explorer (default browser prompt)
 IfWinActive, Internet Explorer is not your default browser
 	{
 	Send ^w
 	}
- */
+*/
 
 
-/* 
+/*
 ; LastPass CC fill
 IfWinActive, LastPass FF Toolbar,
 	{
 	SendInput {Enter}
 	}
- */
+*/
 
 
-/* 
+/*
 ; Logitech Gaming Software (LGS launches when device disconnected)
 IfWinActive, Logitech Gaming Software	;, , , qt_scrollarea_viewport
 	 {
@@ -232,7 +238,7 @@ IfWinActive, Logitech Gaming Software	;, , , qt_scrollarea_viewport
  */
 
 
-/* 
+/*
 ; MakeMKV (Create folder confirmation)
 IfWinActive, MakeMKV BETA popup
 {
@@ -241,7 +247,7 @@ IfWinActive, MakeMKV BETA popup
  */
 
 
-/* 
+/*
 ; ManageEngine ServiceDesk Plus
 ; [Reminder]
 IfWinActive, Servicedesk - Reminder
@@ -275,7 +281,7 @@ IfWinActive, ManageEngine ServiceDesk Plus - Send Notification
  */
 
 
-/* 
+/*
 ;Maze
 ; Exit confirmation
 IfWinActive, Exit, Are you sure you want to exit?
@@ -292,7 +298,7 @@ IfWinActive, Login, This is my preferred database
  */
 
 
-/* 
+/*
 ; Mouse and Keyboard Center
 IfWinActive, Please wait while the application opens: MouseKeyboardCenter.exe
 {
@@ -301,7 +307,7 @@ IfWinActive, Please wait while the application opens: MouseKeyboardCenter.exe
  */
 
 
-/* 
+/*
 ;Nitro Reader (set Actual Size, Continuous)
 IfWinActive,  - Nitro Reader 3
 	{
@@ -348,20 +354,24 @@ IfWinActive, MSN Australia | Hotmail login`, Breaking news`, Outlook`, Skype and
 
 
 
+/*
 ; Program Compatibility Assistant. This requires Administrator access.
 IfWinActive, Program Compatibility Assistant
 {
 	SendInput {Esc}
 }
+*/
 
 
 
 
+/*
 ; Remote Desktop Manager
 IfWinActive, Remote Desktop Manager Free - Do You Want to Restore the Last Opened Connections?
 {
 	Send {Escape}
 }
+*/
 
 
 
@@ -375,16 +385,16 @@ IfWinActive, , Scan and fix (recommended)
 
 
 
-/* 
+/*
 ; Skype for Business
 IfWinActive, Microsoft Outlook, We're sorry
 {
 	Send {Escape}
 }
  */
- 
- 
- 
+
+
+
 ; Spotify (stops Spotify from running at login)
 IfWinActive, Spotify
 {
@@ -394,6 +404,7 @@ IfWinActive, Spotify
 
 
 
+/*
 ; Synergetic
 IfWinActive, Confirm ahk_exe SynMain.exe
 {
@@ -408,10 +419,11 @@ IfWinActive, Synergetic Login
 {
 	SendInput {Enter}
 }
+*/
 
 
 
-/* 
+/*
 ; Titanfall (crash on close)
 IfWinExist, TitanFall.exe, Check online for a solution and close the program
 {
@@ -431,11 +443,17 @@ return
 *********************************************************************************************************************************
 autoclose Known Issues:
  - none
- 
- 
- 
- 
+
+
+
+
 autoclose Version History:
+33.2 - Disabled elevation to Administrator priveleges. This should no longer be required with disabling the Compatibility
+	   Assistant section.
+	 - Disabled Active Directory sections.
+	 - Disabled Program Compatibility Assistant section.
+	 - Disabled Remote Desktop Manager section.
+	 - Disabled Synergetic section.
 33.1 - Disabled ADUC section.
 33.0 - Added section: BUFF.
 32.1 - Updated Active Directory Users and Computers - Startup Warning: Added WinText to specify the window to close.
