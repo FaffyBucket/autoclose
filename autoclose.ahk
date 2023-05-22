@@ -2,7 +2,7 @@
 *********************************************************************************************************************************
 * autoclose						                                                                                                *
 *                                                                                                                               *
-* Version:              33.2                                                                                                    *
+* Version:              34.0                                                                                                    *
 * AutoHotkey Version:   1.1                                                                                                     *
 * Language:       		English                                                                                                 *
 * Platform:       		Windows 10                                                                                              *
@@ -148,12 +148,13 @@ IfWinExist, ahk_exe ipmGui.exe
 */
 
 
-
+/*
 ; BUFF App - Endgame
 IfWinExist, BUFF App - Endgame
 {
 	WinClose
 }
+*/
 
 
 
@@ -378,10 +379,10 @@ IfWinActive, Remote Desktop Manager Free - Do You Want to Restore the Last Opene
 
 ; Scan and fix
 IfWinActive, , Scan and fix (recommended)
-	{
-		Sleep, 500
+{
+	Sleep, 500
 	Send {Escape}
-	}
+}
 
 
 
@@ -401,6 +402,13 @@ IfWinActive, Spotify
 	RegDelete, HKEY_CURRENT_USER, Software\Microsoft\Windows\CurrentVersion\Run, Spotify
 }
 
+
+
+; To Do
+IfWinActive, This app is trying to pin a tile to the taskbar
+{
+	Send {Enter}
+}
 
 
 
@@ -448,6 +456,8 @@ autoclose Known Issues:
 
 
 autoclose Version History:
+34.0 - Added To Do section.
+	 - Disabled BUFF app section.
 33.2 - Disabled elevation to Administrator priveleges. This should no longer be required with disabling the Compatibility
 	   Assistant section.
 	 - Disabled Active Directory sections.
