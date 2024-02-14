@@ -1,1 +1,1 @@
-All documentation in the source code.
+All documentation is in the source code.
