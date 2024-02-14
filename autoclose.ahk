@@ -2,7 +2,7 @@
 *********************************************************************************************************************************
 * autoclose						                                                                                                *
 *                                                                                                                               *
-* Version:              35.0                                                                                                    *
+* Version:              35.01                                                                                                   *
 * AutoHotkey Version:   2.0                                                                                                     *
 * Language:       		English                                                                                                 *
 * Platform:       		Windows 10                                                                                              *
@@ -25,15 +25,22 @@ return
 
 Trigger()
 {
+
+
+
+
+; Apex Legends
 	if WinActive("Apex Legends")
 		{
-			SetCapsLockState "AlwaysOff"
 			if WinWaitNotActive("Apex Legends")
 			{
-				SetCapsLockState true
 				SetCapsLockState false
 			}
 		}
+
+
+
+
 }
 
 
@@ -48,9 +55,10 @@ autoclose Known Issues:
 
 
 autoclose Version History:
+35.01 - Updated Apex Legends section: Fixed Caps Lock usage as a keybind for the game.
 35.00 - First version of autoclose for AHK2.0.
 	  - All functions removed.
 	  - New icon.
-	  - Added Apex Legends section.
+	  - Added "Apex Legends" section.
 *********************************************************************************************************************************
 */
