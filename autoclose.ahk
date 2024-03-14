@@ -1,15 +1,15 @@
 /*
-*********************************************************************************************************************************
-* autoclose						                                                                                                *
-*                                                                                                                               *
-* Version:              35.01                                                                                                   *
-* AutoHotkey Version:   2.0                                                                                                     *
-* Language:       		English                                                                                                 *
-* Platform:       		Windows 10                                                                                              *
-* Author:         		www.twitter.com/matthiew                                                                                *
-*                                                                                                                               *
-* Script Function: Searches for a specific window and does something when it finds it.                                          *
-*********************************************************************************************************************************
+************************************************************************************************
+* autoclose						                                                               *
+*                                                                                              *
+* Version:              36.00                                                                  *
+* AutoHotkey Version:   2.0                                                                    *
+* Language:       		English                                                                *
+* Platform:       		Windows 10, 11                                                         *
+* Author:         		matthiew                                                               *
+*                                                                                              *
+* Script Function: Searches for a specific window and does something when it finds it.         *
+************************************************************************************************
 */
 
 
@@ -41,13 +41,30 @@ Trigger()
 
 
 
+; Word
+;	if WinActive("ahk_class WINWORD.exe")
+;		{
+;			MsgBox "Hello Word!"
+;			Alt+W
+;			1
+;			Alt+W
+;			J
+;			Alt+H
+;			Esc
+;			Esc
+;		}
+
+
+
+
 }
 
 
 
 
+
 /*
-*********************************************************************************************************************************
+************************************************************************************************
 autoclose Known Issues:
  - none
 
@@ -55,10 +72,11 @@ autoclose Known Issues:
 
 
 autoclose Version History:
+36.00 - Added Word section: Sets view to 100%, single-page.
 35.01 - Updated Apex Legends section: Fixed Caps Lock usage as a keybind for the game.
 35.00 - First version of autoclose for AHK2.0.
 	  - All functions removed.
 	  - New icon.
 	  - Added "Apex Legends" section.
-*********************************************************************************************************************************
+************************************************************************************************
 */
