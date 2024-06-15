@@ -2,7 +2,7 @@
 ************************************************************************************************
 * autoclose						                                                               *
 *                                                                                              *
-* Version:              37.00                                                                  *
+* Version:              37.01                                                                  *
 * AutoHotkey Version:   2.0                                                                    *
 * Language:       		English                                                                *
 * Platform:       		Windows 10, 11                                                         *
@@ -20,32 +20,32 @@ Persistent
 #SingleInstance Force
 TraySetIcon ("click.ico")
 
-SetTimer Trigger, 400
+SetTimer Main, 400
 return
 
-Trigger()
+Main()
 {
 
 
 
 
-; Apex Legends
-if WinActive("Apex Legends")
-	{
-		if WinWaitNotActive("Apex Legends")
+	; Apex Legends
+	if WinActive("Apex Legends")
 		{
-			SetCapsLockState false
+			if WinWaitNotActive("Apex Legends")
+			{
+				SetCapsLockState false
+			}
 		}
-	}
 
 
 
 
-; OneNote
-if FileExist(A_Startup "\Send to OneNote.lnk")
-	{
-		FileDelete A_Startup "\Send to OneNote.lnk"
-	}
+	; OneNote
+	if FileExist(A_Startup "\Send to OneNote.lnk")
+		{
+			FileDelete A_Startup "\Send to OneNote.lnk"
+		}
 
 
 
@@ -65,6 +65,7 @@ autoclose Known Issues:
 
 
 autoclose Version History:
+37.01 - Changed a variable to a clearer name.
 37.00 - Added OneNote section: Removes Send to OneNote from start-up.
 36.00 - Added Word section: Sets view to 100%, single-page.
 35.01 - Updated Apex Legends section: Fixed Caps Lock usage as a keybind for the game.
