@@ -2,7 +2,7 @@
 ************************************************************************************************
 * autoclose						                                                               *
 *                                                                                              *
-* Version:              36.00                                                                  *
+* Version:              37.00                                                                  *
 * AutoHotkey Version:   2.0                                                                    *
 * Language:       		English                                                                *
 * Platform:       		Windows 10, 11                                                         *
@@ -30,29 +30,22 @@ Trigger()
 
 
 ; Apex Legends
-	if WinActive("Apex Legends")
+if WinActive("Apex Legends")
+	{
+		if WinWaitNotActive("Apex Legends")
 		{
-			if WinWaitNotActive("Apex Legends")
-			{
-				SetCapsLockState false
-			}
+			SetCapsLockState false
 		}
+	}
 
 
 
 
-; Word
-;	if WinActive("ahk_class WINWORD.exe")
-;		{
-;			MsgBox "Hello Word!"
-;			Alt+W
-;			1
-;			Alt+W
-;			J
-;			Alt+H
-;			Esc
-;			Esc
-;		}
+; OneNote
+if FileExist(A_Startup "\Send to OneNote.lnk")
+	{
+		FileDelete A_Startup "\Send to OneNote.lnk"
+	}
 
 
 
@@ -72,6 +65,7 @@ autoclose Known Issues:
 
 
 autoclose Version History:
+37.00 - Added OneNote section: Removes Send to OneNote from start-up.
 36.00 - Added Word section: Sets view to 100%, single-page.
 35.01 - Updated Apex Legends section: Fixed Caps Lock usage as a keybind for the game.
 35.00 - First version of autoclose for AHK2.0.
