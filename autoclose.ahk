@@ -2,7 +2,7 @@
 ************************************************************************************************
 * autoclose						                                                               *
 *                                                                                              *
-* Version:              37.01                                                                  *
+* Version:              38.00                                                                  *
 * AutoHotkey Version:   2.0                                                                    *
 * Language:       		English                                                                *
 * Platform:       		Windows 10, 11                                                         *
@@ -20,7 +20,7 @@ Persistent
 #SingleInstance Force
 TraySetIcon ("click.ico")
 
-SetTimer Main, 400
+SetTimer Main, 1000
 return
 
 Main()
@@ -37,6 +37,26 @@ Main()
 				SetCapsLockState false
 			}
 		}
+
+
+
+
+	; Fn NumLock
+	; For laptops with a virtual number pad via Fn. Turns NumLock on when an external
+	; keyboard is attached, and off when there are no external keyboards detected.
+    hasExternal := (GetKeyboardCount() > 2)
+    SetNumLockState(hasExternal ? "On" : "Off")
+
+    GetKeyboardCount()
+    {
+        count := 0
+        svc := ComObjGet("winmgmts:")
+        col := svc.ExecQuery("SELECT * FROM Win32_Keyboard")
+        for dev in col {
+            count += 1
+        }
+        return count
+    }
 
 
 
@@ -65,6 +85,7 @@ autoclose Known Issues:
 
 
 autoclose Version History:
+38.00 - Added Fn NumLock section.
 37.01 - Changed a variable to a clearer name.
 37.00 - Added OneNote section: Removes Send to OneNote from start-up.
 36.00 - Added Word section: Sets view to 100%, single-page.
