@@ -2,7 +2,7 @@
 ************************************************************************************************
 * autoclose						                                                               *
 *                                                                                              *
-* Version:              39.00                                                                  *
+* Version:              39.01                                                                  *
 * AutoHotkey Version:   2.0                                                                    *
 * Language:       		English                                                                *
 * Platform:       		Windows 10, 11                                                         *
@@ -73,7 +73,7 @@ Main()
 	; Taskbar Pin Request
 	if WinActive("This app is trying to pin a tile to the taskbar")
 	{
-		Send "{Space}"
+		Send "!{F4}"
 	}
 }
 
@@ -90,6 +90,7 @@ autoclose Known Issues:
 
 
 autoclose Version History:
+39.01 - Improved logic for cancelling taskbar pin prompts.
 39.00 - Added Taskbar Pin Request section.
 38.00 - Added Fn NumLock section.
 37.01 - Changed a variable to a clearer name.
