@@ -2,7 +2,7 @@
 ************************************************************************************************
 * autoclose						                                                               *
 *                                                                                              *
-* Version:              38.00                                                                  *
+* Version:              39.00                                                                  *
 * AutoHotkey Version:   2.0                                                                    *
 * Language:       		English                                                                *
 * Platform:       		Windows 10, 11                                                         *
@@ -31,12 +31,12 @@ Main()
 
 	; Apex Legends
 	if WinActive("Apex Legends")
+	{
+		if WinWaitNotActive("Apex Legends")
 		{
-			if WinWaitNotActive("Apex Legends")
-			{
-				SetCapsLockState false
-			}
+			SetCapsLockState false
 		}
+	}
 
 
 
@@ -63,13 +63,18 @@ Main()
 
 	; OneNote
 	if FileExist(A_Startup "\Send to OneNote.lnk")
-		{
-			FileDelete A_Startup "\Send to OneNote.lnk"
-		}
+	{
+		FileDelete A_Startup "\Send to OneNote.lnk"
+	}
 
 
 
 
+	; Taskbar Pin Request
+	if WinActive("This app is trying to pin a tile to the taskbar")
+	{
+		Send "{Space}"
+	}
 }
 
 
@@ -85,6 +90,7 @@ autoclose Known Issues:
 
 
 autoclose Version History:
+39.00 - Added Taskbar Pin Request section.
 38.00 - Added Fn NumLock section.
 37.01 - Changed a variable to a clearer name.
 37.00 - Added OneNote section: Removes Send to OneNote from start-up.
