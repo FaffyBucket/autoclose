@@ -2,7 +2,7 @@
 ************************************************************************************************
 * autoclose						                                                               *
 *                                                                                              *
-* Version:              40.00                                                                  *
+* Version:              40.01                                                                  *
 * AutoHotkey Version:   2.0                                                                    *
 * Language:       		English                                                                *
 * Platform:       		Windows 10, 11                                                         *
@@ -71,9 +71,13 @@ Main()
 
 
 	; Open File - Security Warning
-	if WinActive("Open File - Security Warning")
+	if WinActive("Open File - Security Warning","Do you want to open this file?")
 	{
 		Send "!O"
+	}
+	if WinActive("Open File - Security Warning","The publisher could not be verified. Are you sure that you want to run this software?")
+	{
+		Send "!R"
 	}
 
 
@@ -99,6 +103,7 @@ autoclose Known Issues:
 
 
 autoclose Version History:
+40.01 - Updated "Open File - Security Warning" to add alternate warning.
 40.00 - Added "Open File - Security Warning" section.
 39.01 - Improved logic for cancelling taskbar pin prompts.
 39.00 - Added "Taskbar Pin Request" section.
