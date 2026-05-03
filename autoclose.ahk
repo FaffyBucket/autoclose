@@ -2,7 +2,7 @@
 ************************************************************************************************
 * autoclose						                                                               *
 *                                                                                              *
-* Version:              40.02                                                                  *
+* Version:              40.03                                                                  *
 * AutoHotkey Version:   2.0                                                                    *
 * Language:       		English                                                                *
 * Platform:       		Windows 10, 11                                                         *
@@ -61,11 +61,11 @@ Main()
 
 
 
-/* 	; OneNote
+	; OneNote
 	if FileExist(A_Startup "\Send to OneNote.lnk")
 	{
 		FileDelete A_Startup "\Send to OneNote.lnk"
-	} */
+	}
 
 
 
@@ -103,6 +103,7 @@ autoclose Known Issues:
 
 
 autoclose Version History:
+40.03 - Re-enabled OneNote section.
 40.02 - Disabled OneNote section.
 40.01 - Updated "Open File - Security Warning" to add alternate warning.
 40.00 - Added "Open File - Security Warning" section.
