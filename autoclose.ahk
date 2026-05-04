@@ -2,7 +2,7 @@
 ************************************************************************************************
 * autoclose						                                                               *
 *                                                                                              *
-* Version:              40.03                                                                  *
+* Version:              40.04                                                                  *
 * AutoHotkey Version:   2.0                                                                    *
 * Language:       		English                                                                *
 * Platform:       		Windows 10, 11                                                         *
@@ -44,7 +44,9 @@ Main()
 	; Fn NumLock
 	; For laptops with a virtual number pad via Fn. Turns NumLock on when an external
 	; keyboard is attached, and off when there are no external keyboards detected.
-    hasExternal := (GetKeyboardCount() > 2)
+	; Note that many other devices can present as a virtual keyboard (mice, touchscreens etc),
+	; so you may have to specify the baseline number of keyboards.
+    hasExternal := (GetKeyboardCount() > 3)
     SetNumLockState(hasExternal ? "On" : "Off")
 
     GetKeyboardCount()
@@ -103,6 +105,7 @@ autoclose Known Issues:
 
 
 autoclose Version History:
+40.04 - Updated Fn Numblock section.
 40.03 - Re-enabled OneNote section.
 40.02 - Disabled OneNote section.
 40.01 - Updated "Open File - Security Warning" to add alternate warning.
