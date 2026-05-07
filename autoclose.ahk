@@ -2,7 +2,7 @@
 ************************************************************************************************
 * autoclose						                                                               *
 *                                                                                              *
-* Version:              40.03                                                                  *
+* Version:              41.00                                                                  *
 * AutoHotkey Version:   2.0                                                                    *
 * Language:       		English                                                                *
 * Platform:       		Windows 10, 11                                                         *
@@ -62,9 +62,11 @@ Main()
 
 
 	; OneNote
-	if FileExist(A_Startup "\Send to OneNote.lnk")
+	if (PID := ProcessExist("ONENOTEM.EXE"))
 	{
-		FileDelete A_Startup "\Send to OneNote.lnk"
+		ProcessPath := ProcessGetPath("ONENOTEM.EXE")
+		ProcessClose "ONENOTEM.EXE"
+		MsgBox "Found OneNote MiniClipper at " ProcessPath
 	}
 
 
@@ -103,6 +105,7 @@ autoclose Known Issues:
 
 
 autoclose Version History:
+41.00 - Overhauled OneNote section.
 40.03 - Re-enabled OneNote section.
 40.02 - Disabled OneNote section.
 40.01 - Updated "Open File - Security Warning" to add alternate warning.
