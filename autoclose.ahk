@@ -2,7 +2,7 @@
 ************************************************************************************************
 * autoclose						                                                               *
 *                                                                                              *
-* Version:              41.00                                                                  *
+* Version:              41.01                                                                  *
 * AutoHotkey Version:   2.0                                                                    *
 * Language:       		English                                                                *
 * Platform:       		Windows 10, 11                                                         *
@@ -46,7 +46,7 @@ Main()
 	; keyboard is attached, and off when there are no external keyboards detected.
 	; Note that many other devices can present as a virtual keyboard (mice, touchscreens etc),
 	; so you may have to specify the baseline number of keyboards.
-    hasExternal := (GetKeyboardCount() > 3)
+    hasExternal := (GetKeyboardCount() > 2)
     SetNumLockState(hasExternal ? "On" : "Off")
 
     GetKeyboardCount()
@@ -107,6 +107,7 @@ autoclose Known Issues:
 
 
 autoclose Version History:
+41.01 - Updated Fn Numblock section.
 41.00 - Overhauled OneNote section.
 40.04 - Updated Fn Numblock section.
 40.03 - Re-enabled OneNote section.
