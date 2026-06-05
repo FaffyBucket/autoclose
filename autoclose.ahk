@@ -2,7 +2,7 @@
 ************************************************************************************************
 * autoclose						                                                               *
 *                                                                                              *
-* Version:              41.01                                                                  *
+* Version:              41.02                                                                  *
 * AutoHotkey Version:   2.0                                                                    *
 * Language:       		English                                                                *
 * Platform:       		Windows 10, 11                                                         *
@@ -68,7 +68,7 @@ Main()
 	{
 		ProcessPath := ProcessGetPath("ONENOTEM.EXE")
 		ProcessClose "ONENOTEM.EXE"
-		MsgBox "Found OneNote MiniClipper at " ProcessPath
+		; MsgBox "Found OneNote MiniClipper at " ProcessPath
 	}
 
 
@@ -107,6 +107,7 @@ autoclose Known Issues:
 
 
 autoclose Version History:
+41.02 - Updated OneNote section.
 41.01 - Updated Fn Numblock section.
 41.00 - Overhauled OneNote section.
 40.04 - Updated Fn Numblock section.
