@@ -2,7 +2,7 @@
 ************************************************************************************************
 * autoclose						                                                               *
 *                                                                                              *
-* Version:              41.02                                                                  *
+* Version:              41.03                                                                  *
 * AutoHotkey Version:   2.0                                                                    *
 * Language:       		English                                                                *
 * Platform:       		Windows 10, 11                                                         *
@@ -41,7 +41,7 @@ Main()
 
 
 
-	; Fn NumLock
+/*	; Fn NumLock
 	; For laptops with a virtual number pad via Fn. Turns NumLock on when an external
 	; keyboard is attached, and off when there are no external keyboards detected.
 	; Note that many other devices can present as a virtual keyboard (mice, touchscreens etc),
@@ -58,7 +58,7 @@ Main()
             count += 1
         }
         return count
-    }
+    } */
 
 
 
@@ -107,6 +107,7 @@ autoclose Known Issues:
 
 
 autoclose Version History:
+41.03 - Disabled Fn Numlock section.
 41.02 - Updated OneNote section.
 41.01 - Updated Fn Numblock section.
 41.00 - Overhauled OneNote section.
