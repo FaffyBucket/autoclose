@@ -2,7 +2,7 @@
 ************************************************************************************************
 * autoclose						                                                               *
 *                                                                                              *
-* Version:              41.03                                                                  *
+* Version:              41.04                                                                  *
 * AutoHotkey Version:   2.0                                                                    *
 * Language:       		English                                                                *
 * Platform:       		Windows 10, 11                                                         *
@@ -41,24 +41,26 @@ Main()
 
 
 
-/*	; Fn NumLock
-	; For laptops with a virtual number pad via Fn. Turns NumLock on when an external
-	; keyboard is attached, and off when there are no external keyboards detected.
-	; Note that many other devices can present as a virtual keyboard (mice, touchscreens etc),
-	; so you may have to specify the baseline number of keyboards.
-    hasExternal := (GetKeyboardCount() > 2)
-    SetNumLockState(hasExternal ? "On" : "Off")
+	; Fn NumLock
+	; For laptops with a virtual number pad via Fn. Toggles NumLock on/off when a dock is
+	; connected/disconnected. Assumes that the presence of a dock = the presence of an external keyboard.
+	; Note that keyboard detection has too many false positives due to virtual keyboards.
+	DockConnected := IsDockConnected()
+    SetNumLockState(DockConnected ? "On" : "Off")
+	IsDockConnected()
+	{
+		wmi := ComObjGet("winmgmts:")
+		devices := wmi.ExecQuery("SELECT * FROM Win32_PnPEntity")
 
-    GetKeyboardCount()
-    {
-        count := 0
-        svc := ComObjGet("winmgmts:")
-        col := svc.ExecQuery("SELECT * FROM Win32_Keyboard")
-        for dev in col {
-            count += 1
-        }
-        return count
-    } */
+		for device in devices
+		{
+			if InStr(device.Name, "Dock")
+			{
+				return true
+			}
+		}
+		return false
+	}
 
 
 
@@ -107,6 +109,7 @@ autoclose Known Issues:
 
 
 autoclose Version History:
+41.04 - Rewrote Fn Numlock section. Keyboard detection had too many faults, so now doing dock detection.
 41.03 - Disabled Fn Numlock section.
 41.02 - Updated OneNote section.
 41.01 - Updated Fn Numblock section.
