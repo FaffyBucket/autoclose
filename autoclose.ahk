@@ -2,7 +2,7 @@
 ************************************************************************************************
 * autoclose						                                                               *
 *                                                                                              *
-* Version:              41.04                                                                  *
+* Version:              42.00                                                                  *
 * AutoHotkey Version:   2.0                                                                    *
 * Language:       		English                                                                *
 * Platform:       		Windows 10, 11                                                         *
@@ -41,12 +41,23 @@ Main()
 
 
 
+	; Crash Report
+	; This doesn't work yet
+	if WinActive("ahk_exe WerFault.exe")
+	{
+		Send "{Up}{Enter}"
+	}
+		
+
+
+
 	; Fn NumLock
 	; For laptops with a virtual number pad via Fn. Toggles NumLock on/off when a dock is
 	; connected/disconnected. Assumes that the presence of a dock = the presence of an external keyboard.
 	; Note that keyboard detection has too many false positives due to virtual keyboards.
+	; Intended for laptops, but conflicts with desktops so disabled.
 	DockConnected := IsDockConnected()
-    SetNumLockState(DockConnected ? "On" : "Off")
+    ;SetNumLockState(DockConnected ? "On" : "Off")
 	IsDockConnected()
 	{
 		wmi := ComObjGet("winmgmts:")
@@ -109,6 +120,8 @@ autoclose Known Issues:
 
 
 autoclose Version History:
+42.00 - Disabled Fn Numlock section.
+	  - Created Crash Report section, though it doesn't do anything at the moment.
 41.04 - Rewrote Fn Numlock section. Keyboard detection had too many faults, so now doing dock detection.
 41.03 - Disabled Fn Numlock section.
 41.02 - Updated OneNote section.
